@@ -1,18 +1,512 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Haytame EL ATRAOUI — Ingénieur Génie Industriel Digital | Safran Alumnus</title>
-    <meta name="description" content="Portfolio d'ingénieur de Haytame El Atraoui. Optimisation des flux industriels, Recherche Opérationnelle, Traçabilité SAP Aéronautique (Safran) et Lean 4.0." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230284c7'/><text x='50' y='65' font-size='46' font-family='sans-serif' font-weight='800' fill='white' text-anchor='middle'>HE</text></svg>" />
-    <script type="module" crossorigin src="/assets/index-CexItOCj.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DwyDMxMA.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haytame EL ATRAOUI — Ingénieur Transformation Digitale Industrielle</title>
+  <meta name="description" content="Portfolio de Haytame EL ATRAOUI, Ingénieur en Transformation Digitale Industrielle, Industrie 4.0, Software & Data Engineering." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg-deep:#050914;--bg-card:#0c1427;--bg-card2:#101c36;--accent:#3b82f6;--accent-glow:#60a5fa;--accent2:#06b6d4;--accent3:#8b5cf6;--gold:#f59e0b;--green:#10b981;--text-1:#f0f4ff;--text-2:#94a3b8;--text-3:#64748b;--border:rgba(59,130,246,.18);--border2:rgba(6,182,212,.15);--radius:16px;--transition:.35s cubic-bezier(.4,0,.2,1)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-snap-type:y mandatory;overflow-y:scroll;scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--bg-deep);color:var(--text-1);line-height:1.6}
+
+    .fp-section{min-height:100vh;scroll-snap-align:start;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:72px 24px 60px}
+    .fp-section::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0}
+    .fp-section::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(59,130,246,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.025) 1px,transparent 1px);background-size:48px 48px}
+    #hero::before{background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(59,130,246,.2) 0%,transparent 70%)}
+    #about::before{background:radial-gradient(ellipse 70% 50% at 0% 50%,rgba(6,182,212,.13) 0%,transparent 65%)}
+    #experience::before{background:radial-gradient(ellipse 70% 50% at 100% 50%,rgba(139,92,246,.12) 0%,transparent 65%)}
+    #projects::before{background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(59,130,246,.14) 0%,transparent 65%)}
+    #skills::before{background:radial-gradient(ellipse 70% 50% at 0% 30%,rgba(16,185,129,.10) 0%,transparent 65%)}
+    #contact::before{background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(245,158,11,.10) 0%,transparent 65%)}
+    .fp-section > .container{position:relative;z-index:1;width:100%;max-width:1100px}
+
+    /* NAV DOTS */
+    .nav-dots{position:fixed;right:28px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px;z-index:1000}
+    .nav-dot{width:8px;height:8px;border-radius:50%;background:var(--text-3);cursor:pointer;transition:var(--transition);border:none;outline:none;position:relative}
+    .nav-dot::after{content:attr(data-label);position:absolute;right:18px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:11px;font-weight:500;color:var(--text-2);opacity:0;transition:var(--transition);pointer-events:none}
+    .nav-dot:hover::after,.nav-dot.active::after{opacity:1}
+    .nav-dot.active{background:var(--accent);transform:scale(1.5)}
+    .nav-dot:hover{background:var(--accent-glow);transform:scale(1.3)}
+
+    /* TOP BAR */
+    .topbar{position:fixed;top:0;left:0;right:0;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;background:rgba(5,9,20,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);z-index:999}
+    .topbar-logo{font-weight:800;font-size:15px;color:var(--text-1)}
+    .topbar-logo span{color:var(--accent)}
+    .topbar-links{display:flex;gap:28px}
+    .topbar-link{font-size:13px;font-weight:500;color:var(--text-3);text-decoration:none;cursor:pointer;transition:var(--transition)}
+    .topbar-link:hover{color:var(--text-1)}
+
+    /* LABELS */
+    .section-label{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+    .section-label::before{content:'';display:inline-block;width:28px;height:1px;background:var(--accent2)}
+    .section-title{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;line-height:1.15;color:var(--text-1);margin-bottom:8px}
+    .section-subtitle{font-size:1rem;color:var(--text-2);font-weight:400;margin-bottom:36px}
+
+    /* HERO */
+    #hero .container{display:flex;flex-direction:column;align-items:center;text-align:center}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:rgba(59,130,246,.08);border-radius:100px;padding:6px 18px;font-size:12px;font-weight:500;color:var(--accent-glow);letter-spacing:.04em;margin-bottom:28px;animation:fadeDown .7s ease both}
+    .hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 2s infinite}
+    .hero-name{font-size:clamp(2.8rem,7vw,5.5rem);font-weight:900;line-height:1.05;letter-spacing:-.02em;color:var(--text-1);animation:fadeUp .8s .1s ease both;margin-bottom:10px}
+    .hero-name .hl{background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 60%,var(--accent3) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-title{font-size:clamp(1rem,2.2vw,1.2rem);color:var(--text-2);font-weight:400;max-width:600px;line-height:1.6;animation:fadeUp .8s .2s ease both;margin-bottom:32px}
+    .hero-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:44px;animation:fadeUp .8s .3s ease both}
+    .tag{font-size:12px;font-weight:500;padding:5px 13px;border-radius:8px;border:1px solid var(--border);background:rgba(255,255,255,.03);color:var(--text-2);transition:var(--transition)}
+    .tag:hover{border-color:var(--accent);color:var(--accent-glow)}
+    .hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;animation:fadeUp .8s .4s ease both}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:12px;background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);color:#fff;font-weight:600;font-size:14px;text-decoration:none;transition:var(--transition);box-shadow:0 0 32px rgba(59,130,246,.25)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(59,130,246,.4)}
+    .btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:12px;border:1px solid var(--border);color:var(--text-2);font-weight:500;font-size:14px;text-decoration:none;transition:var(--transition)}
+    .btn-ghost:hover{border-color:var(--accent);color:var(--accent-glow);background:rgba(59,130,246,.06)}
+    .scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;font-size:10.5px;color:var(--text-3);letter-spacing:.1em;text-transform:uppercase;animation:fadeUp 1s .8s ease both}
+    .scroll-hint .ar{animation:bounce 2s infinite;font-size:15px}
+
+    /* ABOUT */
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+    .about-text p{color:var(--text-2);font-size:.96rem;line-height:1.8;margin-bottom:14px}
+    .about-text p strong{color:var(--text-1)}
+    .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+    .stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:20px 16px;transition:var(--transition);position:relative;overflow:hidden}
+    .stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:var(--transition)}
+    .stat-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+    .stat-card:hover::before{opacity:1}
+    .stat-num{font-size:1.8rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:4px}
+    .stat-lbl{font-size:11px;color:var(--text-3);font-weight:500;text-transform:uppercase;letter-spacing:.07em}
+    .edu-list{display:flex;flex-direction:column;gap:11px}
+    .edu-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:15px 17px;display:flex;gap:13px;align-items:flex-start;transition:var(--transition)}
+    .edu-item:hover{border-color:var(--accent2)}
+    .edu-icon{width:34px;height:34px;border-radius:9px;background:rgba(6,182,212,.12);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+    .edu-t{font-size:12.5px;font-weight:600;color:var(--text-1)}
+    .edu-s{font-size:11px;color:var(--text-2)}
+    .edu-y{font-size:10.5px;color:var(--accent2);font-weight:500;margin-top:2px;font-family:'JetBrains Mono',monospace}
+
+    /* EXPERIENCE */
+    .exp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+    .exp-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px;transition:var(--transition)}
+    .exp-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 16px 48px rgba(0,0,0,.4)}
+    .exp-co{font-size:16px;font-weight:700;color:var(--text-1);margin-bottom:2px}
+    .exp-role{font-size:11.5px;color:var(--accent2);font-weight:500;margin-bottom:4px}
+    .exp-date{font-size:10px;color:var(--text-3);font-family:'JetBrains Mono',monospace;margin-bottom:9px}
+    .exp-metric{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green);background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:7px;padding:3px 9px;margin-bottom:9px}
+    .exp-desc{font-size:12px;color:var(--text-2);line-height:1.65;margin-bottom:11px}
+    .exp-tags{display:flex;flex-wrap:wrap;gap:5px}
+    .exp-tag{font-size:10px;padding:2px 8px;border-radius:6px;background:rgba(59,130,246,.1);color:var(--accent-glow);font-weight:500;border:1px solid rgba(59,130,246,.2)}
+
+    /* PROJECTS */
+    .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .proj-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 22px;transition:var(--transition);display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+    .proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+    .proj-card:nth-child(1)::before{background:linear-gradient(90deg,#3b82f6,#06b6d4)}
+    .proj-card:nth-child(2)::before{background:linear-gradient(90deg,#8b5cf6,#ec4899)}
+    .proj-card:nth-child(3)::before{background:linear-gradient(90deg,#f59e0b,#10b981)}
+    .proj-card:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:0 20px 60px rgba(0,0,0,.5)}
+    .proj-icon{font-size:26px;line-height:1}
+    .proj-name{font-size:15.5px;font-weight:700;color:var(--text-1)}
+    .proj-scope{font-size:12px;color:var(--text-2);line-height:1.65;flex:1}
+    .proj-stack{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}
+    .proj-tech{font-size:10px;padding:2px 7px;border-radius:5px;background:rgba(139,92,246,.1);color:#a78bfa;font-weight:500;border:1px solid rgba(139,92,246,.2);font-family:'JetBrains Mono',monospace}
+
+    /* SKILLS */
+    .skills-inner{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+    .skill-group{margin-bottom:20px}
+    .skill-group-title{font-size:11.5px;font-weight:700;color:var(--accent2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px}
+    .skill-group-title::after{content:'';flex:1;height:1px;background:var(--border2)}
+    .skill-pills{display:flex;flex-wrap:wrap;gap:7px}
+    .skill-pill{font-size:12px;padding:5px 11px;border-radius:8px;border:1px solid var(--border);color:var(--text-2);background:var(--bg-card);font-weight:500;transition:var(--transition);cursor:default}
+    .skill-pill:hover{border-color:var(--accent);color:var(--accent-glow)}
+    .lang-list{display:flex;flex-direction:column;gap:13px}
+    .lang-item{display:flex;flex-direction:column;gap:5px}
+    .lang-header{display:flex;justify-content:space-between;font-size:12.5px}
+    .lang-name{font-weight:600;color:var(--text-1)}
+    .lang-level{font-size:10.5px;font-weight:500;color:var(--accent2);font-family:'JetBrains Mono',monospace}
+    .lang-bar{height:4px;background:var(--bg-card2);border-radius:99px;overflow:hidden}
+    .lang-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+    .engage-list{display:flex;flex-direction:column;gap:9px}
+    .engage-item{display:flex;gap:11px;align-items:flex-start;background:var(--bg-card);border:1px solid var(--border);border-radius:11px;padding:11px 14px;transition:var(--transition)}
+    .engage-item:hover{border-color:var(--gold)}
+    .engage-item .ico{font-size:16px;flex-shrink:0}
+    .engage-item .et{font-size:11.5px;color:var(--text-2);line-height:1.5}
+    .engage-item .et strong{color:var(--text-1);display:block;margin-bottom:1px}
+
+    /* CONTACT */
+    .contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+    .contact-left h2{font-size:clamp(1.7rem,3.2vw,2.7rem);font-weight:800;color:var(--text-1);line-height:1.15;margin-bottom:14px}
+    .contact-left h2 span{background:linear-gradient(135deg,var(--gold),#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .contact-left p{color:var(--text-2);font-size:.93rem;line-height:1.7;margin-bottom:26px}
+    .contact-left p strong{color:var(--text-1)}
+    .contact-links{display:flex;flex-direction:column;gap:9px}
+    .contact-link{display:flex;align-items:center;gap:13px;padding:13px 16px;border-radius:11px;background:var(--bg-card);border:1px solid var(--border);text-decoration:none;transition:var(--transition)}
+    .contact-link:hover{border-color:var(--accent);transform:translateX(4px)}
+    .link-icon{width:36px;height:36px;border-radius:9px;background:rgba(59,130,246,.12);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+    .link-lbl{font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:.08em}
+    .link-val{font-size:13px;font-weight:600;color:var(--text-1)}
+    .cta-box{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:34px 26px;text-align:center;position:relative;overflow:hidden}
+    .cta-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--accent2),var(--accent))}
+    .cta-emoji{font-size:42px;margin-bottom:13px;display:block}
+    .cta-title{font-size:19px;font-weight:700;color:var(--text-1);margin-bottom:7px}
+    .cta-desc{font-size:12.5px;color:var(--text-2);line-height:1.6;margin-bottom:20px}
+    .cta-targets{display:flex;flex-direction:column;gap:6px;margin-bottom:20px;text-align:left}
+    .cta-target{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-2)}
+    .cta-target::before{content:"▸";color:var(--accent);font-size:11px;flex-shrink:0}
+
+    /* ANIMATIONS */
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeDown{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    @media(max-width:768px){
+      .two-col,.skills-inner,.contact-inner{grid-template-columns:1fr;gap:26px}
+      .proj-grid{grid-template-columns:1fr}
+      .exp-grid{grid-template-columns:1fr}
+      .nav-dots,.topbar-links{display:none}
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<nav class="topbar">
+  <div class="topbar-logo">H. <span>EL ATRAOUI</span></div>
+  <div class="topbar-links">
+    <a class="topbar-link" onclick="go('hero')">Accueil</a>
+    <a class="topbar-link" onclick="go('about')">Profil</a>
+    <a class="topbar-link" onclick="go('experience')">Expériences</a>
+    <a class="topbar-link" onclick="go('projects')">Projets</a>
+    <a class="topbar-link" onclick="go('skills')">Compétences</a>
+    <a class="topbar-link" onclick="go('contact')">Contact</a>
+  </div>
+</nav>
+
+<!-- NAV DOTS -->
+<nav class="nav-dots">
+  <button class="nav-dot active" data-target="hero"       data-label="Accueil"     onclick="go('hero')"></button>
+  <button class="nav-dot"        data-target="about"      data-label="Profil"      onclick="go('about')"></button>
+  <button class="nav-dot"        data-target="experience" data-label="Expériences" onclick="go('experience')"></button>
+  <button class="nav-dot"        data-target="projects"   data-label="Projets"     onclick="go('projects')"></button>
+  <button class="nav-dot"        data-target="skills"     data-label="Compétences" onclick="go('skills')"></button>
+  <button class="nav-dot"        data-target="contact"    data-label="Contact"     onclick="go('contact')"></button>
+</nav>
+
+<!-- ===== SECTION 1 : HERO ===== -->
+<section class="fp-section" id="hero">
+  <div class="container">
+    <div class="hero-badge"><span class="dot"></span>Disponible — Stage PFE 2026 / Graduate Program</div>
+    <h1 class="hero-name">Haytame<br /><span class="hl">EL ATRAOUI</span></h1>
+    <p class="hero-title">Ingénieur en Transformation Digitale Industrielle &amp; Industrie 4.0<br />Software Engineering · Data Engineering · IIoT</p>
+    <div class="hero-tags">
+      <span class="tag">Java / Spring Boot</span>
+      <span class="tag">Python / FastAPI</span>
+      <span class="tag">Flutter / Dart</span>
+      <span class="tag">React / Next.js</span>
+      <span class="tag">PostgreSQL · MySQL</span>
+      <span class="tag">Docker</span>
+      <span class="tag">SAP ERP</span>
+      <span class="tag">IIoT / MQTT</span>
+      <span class="tag">Power BI / DAX</span>
+      <span class="tag">Anglais C1</span>
+    </div>
+    <div class="hero-cta">
+      <a href="mailto:haytameelatraoui@gmail.com" class="btn-primary">&#9993; Me contacter</a>
+      <a href="https://github.com/Haytame37" target="_blank" rel="noopener" class="btn-ghost">GitHub</a>
+      <a href="Haytame_El_Atraoui_Master_CV_2_pages_2026.pdf" target="_blank" class="btn-ghost">&#8595; CV PDF</a>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Défiler</span><span class="ar">&#8595;</span></div>
+</section>
+
+<!-- ===== SECTION 2 : ABOUT ===== -->
+<section class="fp-section" id="about">
+  <div class="container">
+    <div class="section-label">Profil candidat</div>
+    <h2 class="section-title">Formation &amp; Identité</h2>
+    <p class="section-subtitle">ENSA Béni Mellal · Promotion 2026 · Double compétence IT &amp; Industrie</p>
+    <div class="two-col reveal">
+      <div class="about-text">
+        <p>Élève-Ingénieur d'État en <strong>Transformation Digitale Industrielle</strong> à l'ENSA de Béni Mellal (Université Sultan Moulay Slimane), promotion 2026. Mon parcours combine une formation solide en <strong>génie logiciel, data engineering et systèmes IoT industriels</strong>.</p>
+        <p>Ma formation initiale en <strong>Licence SMI parcours Bases de Données</strong> (FSBM, Hassan II) m'a donné une maîtrise approfondie des systèmes relationnels — une compétence rare pour un ingénieur orienté terrain.</p>
+        <p>J'ai eu l'opportunité d'intervenir dans des environnements industriels réels (<strong>Safran, COSUMAR</strong>) et de concevoir des applications complètes pour des clients en mode startup (<strong>Zenithsoft, École Kobaa</strong>).</p>
+        <div class="stat-grid">
+          <div class="stat-card"><div class="stat-num">4</div><div class="stat-lbl">Expériences Pro</div></div>
+          <div class="stat-card"><div class="stat-num">3</div><div class="stat-lbl">Projets Portfolio</div></div>
+          <div class="stat-card"><div class="stat-num">C1</div><div class="stat-lbl">Anglais certifié</div></div>
+          <div class="stat-card"><div class="stat-num">4 500+</div><div class="stat-lbl">Records Safran</div></div>
+        </div>
+      </div>
+      <div class="edu-list">
+        <div class="edu-item">
+          <div class="edu-icon">&#127891;</div>
+          <div><div class="edu-t">Diplôme d'Ingénieur d'État — Transformation Digitale Industrielle</div><div class="edu-s">ENSA Béni Mellal · Université Sultan Moulay Slimane</div><div class="edu-y">2024 &#8594; 2026 (Promotion 2026)</div></div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-icon">&#128202;</div>
+          <div><div class="edu-t">Licence SMI — Parcours Bases de Données</div><div class="edu-s">Faculté des Sciences Ben M'Sik · Université Hassan II Casablanca</div><div class="edu-y">2023 – 2024</div></div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-icon">&#129518;</div>
+          <div><div class="edu-t">DEUG SMIA — Sciences Mathématiques Appliquées &amp; Informatique</div><div class="edu-s">Faculté des Sciences Ben M'Sik · Casablanca</div><div class="edu-y">2021 – 2023</div></div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-icon">&#127942;</div>
+          <div><div class="edu-t">Baccalauréat — Sciences Mathématiques A</div><div class="edu-s">Maroc</div><div class="edu-y">2021</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 3 : EXPERIENCE ===== -->
+<section class="fp-section" id="experience">
+  <div class="container">
+    <div class="section-label">Parcours professionnel</div>
+    <h2 class="section-title">Expériences &amp; Réalisations</h2>
+    <p class="section-subtitle">Des environnements réels · des livrables concrets · des métriques mesurables</p>
+    <div class="exp-grid reveal">
+      <div class="exp-card">
+        <div class="exp-co">&#9992; Safran Morocco</div>
+        <div class="exp-role">Stage Digitalisation Industrielle &amp; Qualité</div>
+        <div class="exp-date">Août 2026 – Sept 2026</div>
+        <div class="exp-metric">&#10003; 4 500+ enregistrements traités en production</div>
+        <div class="exp-desc">Analyse des flux de conformité qualité sous SAP ERP en environnement aéronautique. Développement d'un outil Desktop autonome Python pour automatiser l'extraction, le nettoyage et la consolidation des fichiers Excel SAP. Création de règles de gestion paramétrables en VBA.</div>
+        <div class="exp-tags"><span class="exp-tag">SAP ERP</span><span class="exp-tag">Python</span><span class="exp-tag">VBA</span><span class="exp-tag">Excel Automation</span></div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-co">&#128241; Zenithsoft — Rabat</div>
+        <div class="exp-role">Stage Ingénierie Logicielle Mobile</div>
+        <div class="exp-date">Juin 2026 – Juillet 2026 · Remote</div>
+        <div class="exp-metric">&#10003; Architecture Offline-First complète</div>
+        <div class="exp-desc">Application mobile cross-platform Flutter de gestion des interventions terrain. Modules : géolocalisation GPS, capture photo horodatée, signature électronique, génération PDF, dashboard KPI managers. Sécurité JWT + RBAC, synchronisation SQLite &#8594; API REST.</div>
+        <div class="exp-tags"><span class="exp-tag">Flutter</span><span class="exp-tag">Dart</span><span class="exp-tag">SQLite</span><span class="exp-tag">REST API</span><span class="exp-tag">JWT</span><span class="exp-tag">RBAC</span></div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-co">&#127981; COSUMAR</div>
+        <div class="exp-role">Stage Systèmes de Production &amp; Données</div>
+        <div class="exp-date">Septembre 2025</div>
+        <div class="exp-metric">&#10003; Leviers de digitalisation identifiés</div>
+        <div class="exp-desc">Cartographie et analyse des processus industriels de production de sucre. Analyse des écarts entre données machines et rapports manuels. Identification des leviers de digitalisation et automatisation du calcul des KPI de production.</div>
+        <div class="exp-tags"><span class="exp-tag">Industrie 4.0</span><span class="exp-tag">KPI Production</span><span class="exp-tag">Traçabilité</span></div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-co">&#127979; École Kobaa</div>
+        <div class="exp-role">Développeur Web Full-Stack</div>
+        <div class="exp-date">Février 2024 – Juin 2024</div>
+        <div class="exp-metric">&#10003; Application complète livrée et opérationnelle</div>
+        <div class="exp-desc">Application web de gestion des dossiers scolaires : élèves, absences, notes, génération automatique des bulletins. Backend normalisé sous MySQL.</div>
+        <div class="exp-tags"><span class="exp-tag">Full-Stack</span><span class="exp-tag">MySQL</span><span class="exp-tag">Backend</span></div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-co">&#127757; UH2C Summer School — ENSEM</div>
+        <div class="exp-role">Projet RIFQA — Navigation &amp; Sécurité Collaborative</div>
+        <div class="exp-date">Juillet 2026 · Casablanca</div>
+        <div class="exp-metric">&#10003; Soutenance en anglais devant jury d'experts</div>
+        <div class="exp-desc">Application de navigation et sécurité collaborative en environnement dense (foules, pèlerinages, rassemblements). Soutenu en anglais devant jury international.</div>
+        <div class="exp-tags"><span class="exp-tag">React</span><span class="exp-tag">Firebase Firestore</span><span class="exp-tag">Leaflet / OSM</span><span class="exp-tag">Routing APIs</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 4 : PROJECTS ===== -->
+<section class="fp-section" id="projects">
+  <div class="container">
+    <div class="section-label">Portfolio technique</div>
+    <h2 class="section-title">Projets Phares</h2>
+    <p class="section-subtitle">Systèmes industriels complets — de l'architecture à la mise en production</p>
+    <div class="proj-grid reveal">
+      <div class="proj-card">
+        <div class="proj-icon">&#9881;</div>
+        <div class="proj-name">GMPP Suite</div>
+        <div class="proj-scope">Plateforme ERP/GMAO de Maintenance Industrielle (2025–2026). Gestion des actifs industriels, planification des ordres de travail, stocks de pièces de rechange, matrice RBAC à 4 niveaux, journal d'audit de conformité, exports PDF/CSV.</div>
+        <div class="proj-stack"><span class="proj-tech">Java</span><span class="proj-tech">Spring Boot</span><span class="proj-tech">React</span><span class="proj-tech">TailwindCSS</span><span class="proj-tech">PostgreSQL</span><span class="proj-tech">Docker</span><span class="proj-tech">REST API</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon">&#128230;</div>
+        <div class="proj-name">OptiStock Solutions</div>
+        <div class="proj-scope">Aide à la Décision Logistique &amp; IoT (2025–2026). Optimisation du stockage et réapprovisionnement d'entrepôt par algorithmes de recherche opérationnelle. Suivi en direct par capteurs IoT via WebSockets.</div>
+        <div class="proj-stack"><span class="proj-tech">Python</span><span class="proj-tech">FastAPI</span><span class="proj-tech">Next.js</span><span class="proj-tech">Google OR-Tools</span><span class="proj-tech">SQLite</span><span class="proj-tech">WebSockets</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon">&#128202;</div>
+        <div class="proj-name">Industrial OEE Analytics</div>
+        <div class="proj-scope">Dashboard Analytics TRS/OEE temps réel (2025–2026). Calcul du Taux de Rendement Synthétique, décomposition des pertes (disponibilité, performance, qualité), dashboards de direction.</div>
+        <div class="proj-stack"><span class="proj-tech">Python</span><span class="proj-tech">Pandas</span><span class="proj-tech">NumPy</span><span class="proj-tech">Flask</span><span class="proj-tech">WebSockets</span><span class="proj-tech">Power BI</span><span class="proj-tech">DAX</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 5 : SKILLS ===== -->
+<section class="fp-section" id="skills">
+  <div class="container">
+    <div class="section-label">Stack technique &amp; Engagements</div>
+    <h2 class="section-title">Compétences</h2>
+    <p class="section-subtitle">Double expertise IT + Industrie 4.0 — profil rare et recherché sur le marché</p>
+    <div class="skills-inner reveal">
+      <div>
+        <div class="skill-group">
+          <div class="skill-group-title">Backend &amp; APIs</div>
+          <div class="skill-pills"><span class="skill-pill">Java</span><span class="skill-pill">Spring Boot</span><span class="skill-pill">Spring Security</span><span class="skill-pill">Python</span><span class="skill-pill">FastAPI</span><span class="skill-pill">Flask</span><span class="skill-pill">REST API</span><span class="skill-pill">JWT / RBAC</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Frontend &amp; Mobile</div>
+          <div class="skill-pills"><span class="skill-pill">React.js</span><span class="skill-pill">Next.js</span><span class="skill-pill">Flutter / Dart</span><span class="skill-pill">TypeScript</span><span class="skill-pill">TailwindCSS</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Data &amp; Bases de Données</div>
+          <div class="skill-pills"><span class="skill-pill">PostgreSQL</span><span class="skill-pill">MySQL</span><span class="skill-pill">SQLite</span><span class="skill-pill">Pandas</span><span class="skill-pill">NumPy</span><span class="skill-pill">Power BI / DAX</span><span class="skill-pill">VBA</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Industrie 4.0 &amp; ERP</div>
+          <div class="skill-pills"><span class="skill-pill">SAP ERP</span><span class="skill-pill">MQTT</span><span class="skill-pill">IIoT</span><span class="skill-pill">TRS / OEE</span><span class="skill-pill">SCADA</span><span class="skill-pill">Google OR-Tools</span><span class="skill-pill">Docker</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="skill-group">
+          <div class="skill-group-title">Langues</div>
+          <div class="lang-list">
+            <div class="lang-item">
+              <div class="lang-header"><span class="lang-name">Arabe</span><span class="lang-level">Langue maternelle</span></div>
+              <div class="lang-bar"><div class="lang-fill" data-w="100"></div></div>
+            </div>
+            <div class="lang-item">
+              <div class="lang-header"><span class="lang-name">Anglais</span><span class="lang-level">C1 Certifié — Rosetta Stone</span></div>
+              <div class="lang-bar"><div class="lang-fill" data-w="88"></div></div>
+            </div>
+            <div class="lang-item">
+              <div class="lang-header"><span class="lang-name">Français</span><span class="lang-level">B2 — Maîtrise professionnelle</span></div>
+              <div class="lang-bar"><div class="lang-fill" data-w="76"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-group" style="margin-top:22px">
+          <div class="skill-group-title">Leadership &amp; Engagements</div>
+          <div class="engage-list">
+            <div class="engage-item"><div class="ico">&#127981;</div><div class="et"><strong>Président — Club Industrie 4.0 (ENSA Béni Mellal, 2025–Présent)</strong>Gestion d'équipe, conférences techniques &amp; ateliers pratiques avec des professionnels.</div></div>
+            <div class="engage-item"><div class="ico">&#128506;</div><div class="et"><strong>Organisateur — Moroccan TSP Competition (ENSA Béni Mellal)</strong>Compétition nationale sur le Problème du Voyageur de Commerce appliqué à la logistique.</div></div>
+            <div class="engage-item"><div class="ico">&#127908;</div><div class="et"><strong>Modérateur officiel — Public Speaking Competition (Déc 2025)</strong></div></div>
+            <div class="engage-item"><div class="ico">&#128737;</div><div class="et"><strong>Participant — Cybersecurity CTF (Capture The Flag, Avril 2026)</strong></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 6 : CONTACT ===== -->
+<section class="fp-section" id="contact">
+  <div class="container">
+    <div class="contact-inner reveal">
+      <div class="contact-left">
+        <div class="section-label">Ouvrons la conversation</div>
+        <h2>Prêt pour votre <span>prochain challenge</span> ?</h2>
+        <p>Je recherche activement un <strong>stage PFE pré-embauche</strong> (6 mois) ou un <strong>Graduate Program</strong> au Maroc, en France/Belgique ou dans le Golfe. Disponible pour un entretien en français, anglais ou arabe.</p>
+        <div class="contact-links">
+          <a href="mailto:haytameelatraoui@gmail.com" class="contact-link">
+            <div class="link-icon">&#9993;</div>
+            <div style="flex:1"><div class="link-lbl">Email</div><div class="link-val">haytameelatraoui@gmail.com</div></div>
+            <span style="color:var(--text-3);font-size:18px">&#8594;</span>
+          </a>
+          <a href="tel:+212696547432" class="contact-link">
+            <div class="link-icon">&#128222;</div>
+            <div style="flex:1"><div class="link-lbl">Téléphone</div><div class="link-val">+212 696 547 432</div></div>
+            <span style="color:var(--text-3);font-size:18px">&#8594;</span>
+          </a>
+          <a href="https://github.com/Haytame37" target="_blank" rel="noopener" class="contact-link">
+            <div class="link-icon">&#9998;</div>
+            <div style="flex:1"><div class="link-lbl">GitHub</div><div class="link-val">github.com/Haytame37</div></div>
+            <span style="color:var(--text-3);font-size:18px">&#8594;</span>
+          </a>
+          <a href="Haytame_El_Atraoui_Master_CV_2_pages_2026.pdf" target="_blank" class="contact-link">
+            <div class="link-icon">&#128196;</div>
+            <div style="flex:1"><div class="link-lbl">Curriculum Vitae</div><div class="link-val">Télécharger le CV (PDF)</div></div>
+            <span style="color:var(--text-3);font-size:18px">&#8595;</span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="cta-box">
+          <span class="cta-emoji">&#127919;</span>
+          <div class="cta-title">Opportunités Recherchées</div>
+          <div class="cta-desc">Profil à double compétence IT + Industrie 4.0, disponible pour des missions à fort impact.</div>
+          <div class="cta-targets">
+            <div class="cta-target">Stage PFE Ingénieur — Pré-embauche CDI</div>
+            <div class="cta-target">Graduate Program — Maroc, France, Golfe</div>
+            <div class="cta-target">Consultant Technico-Fonctionnel ERP / MES</div>
+            <div class="cta-target">Software Engineer appliqué aux opérations</div>
+            <div class="cta-target">Mission Remote — Full-Stack Python / Flutter</div>
+          </div>
+          <div style="border-top:1px solid var(--border);padding-top:16px">
+            <div style="font-size:10.5px;color:var(--text-3);margin-bottom:9px;letter-spacing:.06em;text-transform:uppercase">Cibles prioritaires</div>
+            <div style="display:flex;flex-wrap:wrap;gap:7px;justify-content:center">
+              <span class="tag">Safran</span><span class="tag">GE Vernova</span><span class="tag">Oracle Maroc</span><span class="tag">SAP YPP</span><span class="tag">Dell Technologies</span><span class="tag">Schneider Electric</span><span class="tag">OCP</span><span class="tag">Capgemini</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const sectionIds = ['hero','about','experience','projects','skills','contact'];
+  let current = 0;
+
+  function go(id) { document.getElementById(id).scrollIntoView({behavior:'smooth'}); }
+
+  // Active dot tracking
+  const secEls = document.querySelectorAll('.fp-section');
+  const dots    = document.querySelectorAll('.nav-dot');
+
+  const io1 = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        dots.forEach(d => d.classList.remove('active'));
+        const d = document.querySelector('.nav-dot[data-target="' + e.target.id + '"]');
+        if (d) d.classList.add('active');
+        current = sectionIds.indexOf(e.target.id);
+      }
+    });
+  }, {threshold: 0.5});
+  secEls.forEach(s => io1.observe(s));
+
+  // Reveal animations
+  const io2 = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold: 0.12});
+  document.querySelectorAll('.reveal').forEach(el => io2.observe(el));
+
+  // Language bars
+  const io3 = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        document.querySelectorAll('.lang-fill').forEach(el => {
+          el.style.width = el.dataset.w + '%';
+        });
+      }
+    });
+  }, {threshold: 0.3});
+  const skillSec = document.getElementById('skills');
+  if (skillSec) io3.observe(skillSec);
+
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+      e.preventDefault();
+      current = Math.min(current + 1, sectionIds.length - 1);
+      go(sectionIds[current]);
+    }
+    if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+      e.preventDefault();
+      current = Math.max(current - 1, 0);
+      go(sectionIds[current]);
+    }
+  });
+</script>
+</body>
 </html>
