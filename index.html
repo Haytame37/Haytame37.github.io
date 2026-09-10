@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <title>Haytame EL ATRAOUI — Industrial Digital Transformation Engineer</title>
   <meta name="description" content="Portfolio ultra-premium de Haytame EL ATRAOUI — Ingénieur en Transformation Digitale Industrielle & Génie Logiciel." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -476,14 +479,21 @@
       overflow: hidden;
     }
 
-    /* ── STAGGERED REVEAL ANIMATIONS ── */
+    /* ── STAGGERED REVEAL ANIMATIONS (VISIBLE BY DEFAULT TO PREVENT WHITE SCREENS) ── */
     .rev {
-      opacity: 0;
-      transform: translateY(24px);
+      opacity: 1;
+      transform: translateY(0);
       transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
                   transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .rev.on { opacity: 1; transform: translateY(0); }
+    .rev.anim-init {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    .rev.on {
+      opacity: 1;
+      transform: translateY(0);
+    }
     .d1 { transition-delay: 0.04s; }
     .d2 { transition-delay: 0.12s; }
     .d3 { transition-delay: 0.20s; }
@@ -1109,9 +1119,9 @@
       <section class="ss" data-slide="1">
         <div class="si">
           <div class="shd">
-            <div class="stag rev d1" id="s2Tag">
+            <div class="stag rev d1">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
-              Expérience Opérationnelle Validée
+              <span id="s2Tag">Expérience Opérationnelle Validée</span>
             </div>
             <h2 class="stitle rev d1" id="s2Title">Safran — Stage Digitalisation Industrielle &amp; Qualité</h2>
             <p class="sdesc rev d2" id="s2Desc">Analyse, automatisation et fiabilisation des flux de données qualité sous SAP ERP, Excel et VBA (Août – Sept 2026).</p>
@@ -1124,19 +1134,19 @@
                 <ul class="flist">
                   <li id="s2M1">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Analyse et optimisation du workflow qualité sous SAP ERP.
+                    <span>Analyse et optimisation du workflow qualité sous SAP ERP.</span>
                   </li>
                   <li id="s2M2">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Développement d'une application Desktop autonome en Python pour les fichiers SAP.
+                    <span>Développement d'une application Desktop autonome en Python pour les fichiers SAP.</span>
                   </li>
                   <li id="s2M3">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Conception de règles métiers paramétrables et modèles Excel/VBA réutilisables.
+                    <span>Conception de règles métiers paramétrables et modèles Excel/VBA réutilisables.</span>
                   </li>
                   <li id="s2M4">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Standardisation des livrables et suppression des ressaisies manuelles.
+                    <span>Standardisation des livrables et suppression des ressaisies manuelles.</span>
                   </li>
                 </ul>
               </div>
@@ -1163,9 +1173,9 @@
       <section class="ss" data-slide="2">
         <div class="si">
           <div class="shd">
-            <div class="stag rev d1" id="s3Tag">
+            <div class="stag rev d1">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect></svg>
-              Génie Logiciel &amp; Recherche Opérationnelle
+              <span id="s3Tag">Génie Logiciel &amp; Recherche Opérationnelle</span>
             </div>
             <h2 class="stitle rev d1" id="s3Title">Projets Concrets &amp; Simulateur d'Optimisation</h2>
             <p class="sdesc rev d2" id="s3Desc">Applications connectées terrain (Flutter, Offline-First) et démonstrateur interactif d'optimisation de tournées (VRP/TSP).</p>
@@ -1178,15 +1188,15 @@
                 <ul class="flist">
                   <li id="s3P1">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Gestion d'interventions hors réseau (Offline-first).
+                    <span>Gestion d'interventions hors réseau (Offline-first).</span>
                   </li>
                   <li id="s3P2">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Contrôle d'accès RBAC (technicien, manager, admin).
+                    <span>Contrôle d'accès RBAC (technicien, manager, admin).</span>
                   </li>
                   <li id="s3P3">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Géolocalisation, signature électronique et reporting.
+                    <span>Géolocalisation, signature électronique et reporting.</span>
                   </li>
                 </ul>
               </div>
@@ -1232,9 +1242,9 @@
       <section class="ss" data-slide="3">
         <div class="si">
           <div class="shd">
-            <div class="stag rev d1" id="s4Tag">
+            <div class="stag rev d1">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-              Technical Skills
+              <span id="s4Tag">Technical Skills</span>
             </div>
             <h2 class="stitle rev d1" id="s4Title">Compétences Techniques &amp; Spécialités Métier</h2>
             <p class="sdesc rev d2" id="s4Desc">Stack logicielle complète : développement full-stack, enterprise ERP, données industrielles et optimisation.</p>
@@ -1273,9 +1283,9 @@
       <section class="ss" data-slide="4">
         <div class="si">
           <div class="shd">
-            <div class="stag rev d1" id="s5Tag">
+            <div class="stag rev d1">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-              Education &amp; Leadership
+              <span id="s5Tag">Education &amp; Leadership</span>
             </div>
             <h2 class="stitle rev d1" id="s5Title">Parcours Académique &amp; Activités de Leadership</h2>
             <p class="sdesc rev d2" id="s5Desc">Les 4 formations diplômantes exactes du CV, complétées par les responsabilités associatives.</p>
@@ -1586,7 +1596,15 @@ function applyLang(l) {
   for (const [k, v] of Object.entries(c)) {
     if (['tabs', 'autoplayActive', 'autoplayPaused', 'vrpOptLabel', 'vrpDefaultLabel', 'vrpOptBtn', 'vrpDefaultBtn'].includes(k)) continue;
     const el = document.getElementById(k);
-    if (el) el.textContent = v;
+    if (el) {
+      if (el.tagName === 'LI') {
+        const sp = el.querySelector('span');
+        if (sp) sp.textContent = v;
+        else el.textContent = v;
+      } else {
+        el.textContent = v;
+      }
+    }
   }
 
   apText.textContent = isAP ? c.autoplayActive : c.autoplayPaused;
@@ -1616,8 +1634,7 @@ function trigReveal(idx) {
   const s = document.querySelector('[data-slide="' + idx + '"]');
   if (!s) return;
   s.querySelectorAll('.rev').forEach(el => {
-    el.classList.remove('on');
-    requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('on')));
+    el.classList.add('on');
   });
 }
 
@@ -1630,7 +1647,7 @@ function updateView() {
     clearTimeout(timer);
     timer = setTimeout(nextSlide, DUR);
   }
-  setTimeout(() => trigReveal(cur), 80);
+  setTimeout(() => trigReveal(cur), 50);
   if (cur === 1 && !counterDone) animCounter();
 }
 
