@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
@@ -56,6 +56,7 @@
     html, body {
       width: 100%;
       height: 100%;
+      height: 100dvh;
       overflow: hidden;
       background: #F8FAFD;
       color: var(--onyx);
@@ -64,10 +65,63 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
+    /* ── CUSTOM GLOWING CYAN CURSOR FOLLOWER (Inspiré du portfolio d'Anas) ── */
+    #cursorDot {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      background-color: var(--neon-cyan);
+      box-shadow: 0 0 10px var(--neon-cyan), 0 0 4px var(--neon-cyan);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 99999;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    #cursorRing {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 34px;
+      height: 34px;
+      border: 1.6px solid var(--neon-cyan);
+      box-shadow: 0 0 14px rgba(0, 245, 255, 0.45), inset 0 0 6px rgba(0, 245, 255, 0.15);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 99998;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: width 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+                  height 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+                  background-color 0.22s ease,
+                  border-color 0.22s ease,
+                  opacity 0.25s ease;
+    }
+
+    #cursorRing.hovered {
+      width: 48px;
+      height: 48px;
+      background-color: rgba(0, 245, 255, 0.09);
+      border-color: #38bdf8;
+      box-shadow: 0 0 20px rgba(0, 245, 255, 0.65);
+    }
+
+    /* Désactivation du curseur customisé sur écrans tactiles */
+    @media (hover: none) or (pointer: coarse) {
+      #cursorDot, #cursorRing {
+        display: none !important;
+      }
+    }
+
     /* ── BACKGROUND WATER REFLECTION & MESH GRADIENTS ── */
     .app-root {
       width: 100vw;
       height: 100vh;
+      height: 100dvh;
       display: flex;
       flex-direction: column;
       position: relative;
@@ -160,23 +214,23 @@
 
     /* ── TOPBAR FROSTED GLASS ── */
     .topbar {
-      height: 66px;
-      min-height: 66px;
-      background: rgba(255, 255, 255, 0.82);
+      height: 64px;
+      min-height: 64px;
+      background: rgba(255, 255, 255, 0.84);
       backdrop-filter: blur(20px) saturate(180%);
       -webkit-backdrop-filter: blur(20px) saturate(180%);
       border-bottom: 1px solid rgba(226, 232, 240, 0.8);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 32px;
+      padding: 0 28px;
       z-index: 100;
       position: relative;
     }
-    .tl { display: flex; align-items: center; gap: 14px; }
+    .tl { display: flex; align-items: center; gap: 12px; }
     .mono-badge {
-      width: 38px;
-      height: 38px;
+      width: 36px;
+      height: 36px;
       border-radius: 10px;
       background: linear-gradient(135deg, #0F172A, #1E293B);
       color: var(--white);
@@ -200,6 +254,7 @@
       color: var(--onyx);
       font-family: var(--font-display);
       letter-spacing: -0.01em;
+      white-space: nowrap;
     }
     .tsub {
       font-size: 11px;
@@ -207,6 +262,7 @@
       font-weight: 500;
       font-family: var(--font-mono);
       margin-top: 1px;
+      white-space: nowrap;
     }
 
     .tc {
@@ -241,8 +297,8 @@
     .aplay {
       display: flex;
       align-items: center;
-      gap: 7px;
-      padding: 5px 13px;
+      gap: 6px;
+      padding: 5px 12px;
       border-radius: 20px;
       font-size: 11.5px;
       font-weight: 600;
@@ -267,12 +323,12 @@
       padding: 0 6px;
     }
 
-    .tr { display: flex; align-items: center; gap: 10px; }
+    .tr { display: flex; align-items: center; gap: 8px; }
     .lbtn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 6px 14px;
+      gap: 5px;
+      padding: 6px 12px;
       border-radius: 20px;
       font-size: 11.5px;
       font-weight: 700;
@@ -296,14 +352,15 @@
     .pill-btn {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      padding: 7px 16px;
+      gap: 6px;
+      padding: 7px 15px;
       border-radius: 20px;
       font-size: 12px;
       font-weight: 600;
       text-decoration: none;
       cursor: pointer;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
     }
     .pill-ghost {
       background: rgba(255, 255, 255, 0.8);
@@ -331,7 +388,7 @@
       transform: translateY(-1px);
     }
 
-    /* ── PROGRESS TRACK WITH WATER CAUSTIC GRADIENT ── */
+    /* ── PROGRESS TRACK (Ralenti à 16s pour lecture attentive) ── */
     .prog-track {
       height: 2.5px;
       width: 100%;
@@ -347,7 +404,7 @@
       transform: scaleX(0);
       will-change: transform;
     }
-    .prog-bar.running { animation: pfill 7.5s linear forwards; }
+    .prog-bar.running { animation: pfill 16s linear forwards; }
     .prog-bar.paused { animation-play-state: paused; }
     @keyframes pfill { 0% { transform: scaleX(0); } 100% { transform: scaleX(1); } }
 
@@ -372,7 +429,8 @@
       height: 100%;
       overflow-y: auto;
       scrollbar-width: none;
-      padding: 24px 48px;
+      -webkit-overflow-scrolling: touch;
+      padding: 24px 44px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -412,21 +470,21 @@
       box-shadow: 0 12px 32px rgba(15, 23, 42, 0.2);
       transform: translateY(-50%) scale(1.08);
     }
-    .farrow.prev { left: 18px; }
-    .farrow.next { right: 18px; }
+    .farrow.prev { left: 16px; }
+    .farrow.next { right: 16px; }
 
     /* ── BOTTOM DOCK NAVIGATION ── */
     .bnav {
-      height: 58px;
-      min-height: 58px;
-      background: rgba(255, 255, 255, 0.85);
+      height: 56px;
+      min-height: 56px;
+      background: rgba(255, 255, 255, 0.88);
       backdrop-filter: blur(20px) saturate(180%);
       -webkit-backdrop-filter: blur(20px) saturate(180%);
       border-top: 1px solid rgba(226, 232, 240, 0.8);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0 16px;
+      padding: 0 14px;
       z-index: 50;
     }
     .ntabs {
@@ -435,13 +493,15 @@
       gap: 6px;
       overflow-x: auto;
       scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding: 2px 4px;
     }
     .ntabs::-webkit-scrollbar { display: none; }
     .ntab {
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 7px 16px;
+      gap: 7px;
+      padding: 7px 15px;
       border-radius: 20px;
       border: 1px solid transparent;
       background: transparent;
@@ -471,7 +531,7 @@
 
     /* ── CARDS WITH WATER REFLECTIVE FROSTED GLASS ── */
     .card {
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.84);
       backdrop-filter: blur(24px) saturate(180%);
       -webkit-backdrop-filter: blur(24px) saturate(180%);
       border: 1px solid rgba(255, 255, 255, 0.9);
@@ -511,12 +571,12 @@
     .card > * { position: relative; z-index: 1; }
 
     .hero-card {
-      background: rgba(255, 255, 255, 0.86);
+      background: rgba(255, 255, 255, 0.88);
       backdrop-filter: blur(28px) saturate(180%);
       -webkit-backdrop-filter: blur(28px) saturate(180%);
       border: 1px solid rgba(255, 255, 255, 0.95);
       border-radius: var(--r-xl);
-      padding: 40px 46px;
+      padding: 38px 44px;
       box-shadow: 0 20px 50px -10px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(226, 232, 240, 0.7);
       position: relative;
       overflow: hidden;
@@ -526,7 +586,7 @@
       box-shadow: 0 26px 58px -12px rgba(2, 132, 199, 0.16), 0 0 0 1px rgba(186, 230, 253, 0.85);
     }
 
-    /* ── STAGGERED REVEAL ANIMATIONS (VISIBLE BY DEFAULT) ── */
+    /* ── STAGGERED REVEAL ANIMATIONS ── */
     .rev {
       opacity: 1;
       transform: translateY(0);
@@ -553,7 +613,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       flex-wrap: wrap;
     }
     .avail-b {
@@ -595,7 +655,7 @@
       font-family: var(--font-mono);
     }
     .hero-name {
-      font-size: clamp(32px, 4.4vw, 54px);
+      font-size: clamp(30px, 4.2vw, 52px);
       font-weight: 800;
       letter-spacing: -0.035em;
       line-height: 1.08;
@@ -609,7 +669,7 @@
       font-weight: 600;
     }
 
-    /* TYPEWRITER ROTATING EFFECT (Inspiré d'Anas) */
+    /* TYPEWRITER ROTATING EFFECT (Calmé pour lecture attentive) */
     .tw-role-wrap {
       display: inline-flex;
       align-items: center;
@@ -655,7 +715,7 @@
       margin-bottom: 22px;
     }
 
-    .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
     .pill {
       font-family: var(--font-mono);
       font-size: 11.5px;
@@ -743,7 +803,7 @@
       flex-wrap: wrap;
       gap: 10px;
       align-items: center;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
     .cta-p {
       display: inline-flex;
@@ -792,7 +852,7 @@
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 12px;
       border-top: 1px solid rgba(226, 232, 240, 0.7);
-      padding-top: 20px;
+      padding-top: 18px;
     }
     .pillar { display: flex; gap: 12px; align-items: flex-start; }
     .pnum {
@@ -814,7 +874,7 @@
     .pd { font-size: 12px; color: var(--slate); line-height: 1.5; }
 
     /* ── SECTION HEADINGS ── */
-    .shd { margin-bottom: 20px; }
+    .shd { margin-bottom: 18px; }
     .stag {
       display: inline-flex;
       align-items: center;
@@ -837,16 +897,10 @@
       letter-spacing: -0.025em;
       margin-bottom: 6px;
     }
-    .sdesc { font-size: 14.5px; color: var(--slate); line-height: 1.6; max-width: 780px; }
+    .sdesc { font-size: 14px; color: var(--slate); line-height: 1.6; max-width: 780px; }
 
     .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     .g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    @media(max-width: 860px) {
-      .g2, .g3 { grid-template-columns: 1fr; }
-      .ss { padding: 18px 20px; }
-      .hero-card { padding: 28px 24px; }
-      .topbar { padding: 0 16px; }
-    }
 
     .flist { list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--slate); line-height: 1.5; }
     .flist li { display: flex; align-items: flex-start; gap: 8px; }
@@ -1086,7 +1140,7 @@
       to { opacity: 1; transform: scale(1); }
     }
     .modal-box {
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(28px);
       -webkit-backdrop-filter: blur(28px);
       border: 1px solid rgba(255, 255, 255, 0.95);
@@ -1120,9 +1174,190 @@
       background: var(--onyx);
       color: var(--white);
     }
+
+    /* ── RESPONSIVE ADAPTATIONS STRICTEMENT TESTÉES (Mobile, Tablettes, Desktop) ── */
+    @media (max-width: 860px) {
+      .g2, .g3 { grid-template-columns: 1fr; gap: 14px; }
+      .ss { padding: 18px 16px 85px 16px; }
+      .hero-card { padding: 28px 22px; }
+      .topbar { padding: 0 16px; }
+      .farrow { display: none !important; } /* Sur mobile, navigation fluide par swipe ou dock tabs */
+    }
+
+    @media (max-width: 640px) {
+      /* Topbar compacte sur mobile sans déformation */
+      .topbar {
+        height: 58px;
+        min-height: 58px;
+        padding: 0 12px;
+      }
+      .mono-badge {
+        width: 32px;
+        height: 32px;
+        font-size: 11px;
+      }
+      .tname {
+        font-size: 13.5px;
+      }
+      .tsub {
+        display: none; /* Cache le sous-titre long sur très petit écran pour éviter les décalages */
+      }
+      .tc {
+        gap: 2px;
+        padding: 2px 6px;
+      }
+      .ctrl {
+        width: 26px;
+        height: 26px;
+      }
+      .aplay span#autoplayText {
+        display: none; /* Cache le mot 'Actif' pour garder seulement l'icône sur mobile */
+      }
+      .aplay {
+        padding: 4px 6px;
+      }
+      .sctr {
+        font-size: 10px;
+        padding: 0 3px;
+      }
+      .pill-phone {
+        display: none !important; /* Cache le numéro de téléphone direct en topbar pour préserver l'espace */
+      }
+      .lbtn {
+        padding: 5px 9px;
+        font-size: 10.5px;
+      }
+      .pill-solid {
+        padding: 5px 10px;
+        font-size: 11px;
+      }
+
+      /* Contenu des slides ultra-adaptable */
+      .ss {
+        padding: 14px 10px 92px 10px; /* Espace bas généreux pour ne jamais masquer le contenu par le dock */
+        align-items: flex-start;
+      }
+      .hero-card {
+        padding: 20px 15px;
+        border-radius: 18px;
+      }
+      .card {
+        padding: 18px 15px;
+        border-radius: 16px;
+      }
+      .badge-row {
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+      .avail-b, .role-b {
+        font-size: 10.5px;
+        padding: 4px 10px;
+      }
+      .hero-name {
+        font-size: 25px;
+        line-height: 1.18;
+        margin-bottom: 4px;
+      }
+      .tw-role-wrap {
+        font-size: 13px;
+        min-height: 22px;
+        margin-bottom: 6px;
+      }
+      .hero-base {
+        font-size: 13.5px;
+        margin-bottom: 8px;
+      }
+      .hdiv {
+        margin-bottom: 12px;
+      }
+      .hero-desc {
+        font-size: 13px;
+        line-height: 1.55;
+        margin-bottom: 16px;
+      }
+      .pills {
+        gap: 6px;
+        margin-bottom: 16px;
+      }
+      .pill {
+        font-size: 10.5px;
+        padding: 4px 8px;
+      }
+      .cgrid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+      .ci {
+        padding: 10px 12px;
+      }
+      .cta-row {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+        margin-bottom: 18px;
+      }
+      .cta-p, .cta-s {
+        width: 100%;
+        justify-content: center;
+        font-size: 13px;
+        padding: 11px 16px;
+      }
+      .pillars {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding-top: 14px;
+      }
+
+      /* Slide 2 & 3 Mobile */
+      .stitle { font-size: 20px; }
+      .sdesc { font-size: 12.5px; }
+      .sbox { padding: 14px 15px; }
+      .snum { font-size: 26px; }
+      .vrp-wrap { padding: 8px; }
+      #vrpSvg { width: 100%; height: auto; }
+
+      /* Slide 6 Mobile */
+      .chero-t { font-size: 21px; }
+      .chero-s { font-size: 13px; margin-bottom: 16px; }
+      .cbtns {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+      }
+      .cl {
+        width: 100%;
+        justify-content: center;
+        font-size: 13px;
+        padding: 11px 16px;
+      }
+
+      /* Dock Tabs sur mobile */
+      .bnav {
+        height: 52px;
+        min-height: 52px;
+        padding: 0 8px;
+      }
+      .ntab {
+        padding: 5px 11px;
+        font-size: 11px;
+        gap: 5px;
+      }
+      .ntnum {
+        font-size: 10px;
+      }
+
+      /* Modal mobile */
+      .modal-backdrop { padding: 14px; }
+      .modal-box { padding: 22px 16px; border-radius: 16px; max-height: 85vh; }
+    }
   </style>
 </head>
 <body>
+
+<!-- CUSTOM GLOWING CYAN CURSOR FOLLOWER (Inspiré du portfolio d'Anas & screenshot utilisateur) -->
+<div id="cursorDot"></div>
+<div id="cursorRing"></div>
 
 <div class="app-root">
   <!-- HTML5 Dynamic Water Reflection Caustic Canvas -->
@@ -1149,7 +1384,7 @@
       <button class="ctrl" id="btnPrev" aria-label="Previous Slide">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
       </button>
-      <button class="aplay active" id="btnAutoplay">
+      <button class="aplay active" id="btnAutoplay" aria-label="Toggle Autoplay">
         <span id="autoplayIcon" style="display:inline-flex;align-items:center;">
           <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
         </span>
@@ -1161,11 +1396,11 @@
       </button>
     </div>
     <div class="tr">
-      <button class="lbtn" id="btnLangToggle">
+      <button class="lbtn" id="btnLangToggle" aria-label="Switch Language">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
         <span id="tagFR" class="lang-on">FR</span> | <span id="tagEN" class="lang-off">EN</span>
       </button>
-      <a href="tel:+212696547432" class="pill-btn pill-ghost">
+      <a href="tel:+212696547432" class="pill-btn pill-ghost pill-phone">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
         +212 696 547 432
       </a>
@@ -1204,7 +1439,7 @@
             
             <h1 class="hero-name rev d2">Haytame <em>EL ATRAOUI</em></h1>
 
-            <!-- TYPEWRITER DYNAMIC ROLE SWITCHER (Inspiré d'Anas) -->
+            <!-- TYPEWRITER DYNAMIC ROLE SWITCHER (Calmé pour lecture attentive) -->
             <div class="tw-role-wrap rev d2">
               <span id="twDynamicRole">Ingénieur Génie Logiciel &amp; SI</span>
               <span class="tw-cur"></span>
@@ -1580,7 +1815,7 @@
       <section class="ss" data-slide="5">
         <div class="si">
           <div class="chero">
-            <div class="card rev d1" style="padding:40px 36px;">
+            <div class="card rev d1" style="padding:36px 32px;">
               <div class="chero-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3z"/></svg>
               </div>
@@ -1606,7 +1841,7 @@
                 </a>
               </div>
 
-              <div style="display:flex;align-items:center;justify-content:center;gap:20px;padding-top:18px;border-top:1px solid rgba(226, 232, 240, 0.7);font-size:13.5px;flex-wrap:wrap;" class="rev d4">
+              <div style="display:flex;align-items:center;justify-content:center;gap:18px;padding-top:16px;border-top:1px solid rgba(226, 232, 240, 0.7);font-size:13.5px;flex-wrap:wrap;" class="rev d4">
                 <a href="https://github.com/Haytame37" target="_blank" rel="noopener" style="color:var(--graphite);text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:6px;">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
                   github.com/Haytame37
@@ -1647,6 +1882,57 @@
 </div>
 
 <script>
+/* ── CUSTOM GLOWING CYAN CURSOR FOLLOWER LOGIC (Inspiré du portfolio d'Anas & screenshot) ── */
+const cursorDot = document.getElementById('cursorDot');
+const cursorRing = document.getElementById('cursorRing');
+let cMouseX = -100;
+let cMouseY = -100;
+let cRingX = -100;
+let cRingY = -100;
+let isCursorActive = false;
+
+window.addEventListener('mousemove', e => {
+  cMouseX = e.clientX;
+  cMouseY = e.clientY;
+  if (!isCursorActive) {
+    cRingX = cMouseX;
+    cRingY = cMouseY;
+    isCursorActive = true;
+    cursorDot.style.opacity = '1';
+    cursorRing.style.opacity = '1';
+  }
+  cursorDot.style.transform = 'translate3d(' + cMouseX + 'px, ' + cMouseY + 'px, 0) translate(-50%, -50%)';
+});
+
+window.addEventListener('mouseleave', () => {
+  cursorDot.style.opacity = '0';
+  cursorRing.style.opacity = '0';
+  isCursorActive = false;
+});
+
+function loopCursor() {
+  if (isCursorActive) {
+    cRingX += (cMouseX - cRingX) * 0.18;
+    cRingY += (cMouseY - cRingY) * 0.18;
+    cursorRing.style.transform = 'translate3d(' + cRingX + 'px, ' + cRingY + 'px, 0) translate(-50%, -50%)';
+  }
+  requestAnimationFrame(loopCursor);
+}
+requestAnimationFrame(loopCursor);
+
+// Agrandissement magnétique du cercle sur les éléments interactifs
+const interactiveSel = 'a, button, input, textarea, .ntab, .ci, .pill, .pfilter-btn, .ctrl, .lbtn, .pill-btn, .farrow, .vrp-btn, .edu, .sbox';
+document.addEventListener('mouseover', e => {
+  if (e.target.closest(interactiveSel)) {
+    cursorRing.classList.add('hovered');
+  }
+});
+document.addEventListener('mouseout', e => {
+  if (e.target.closest(interactiveSel)) {
+    cursorRing.classList.remove('hovered');
+  }
+});
+
 /* BILINGUAL DICTIONARY */
 const dict = {
   fr: {
@@ -1734,7 +2020,7 @@ const dict = {
     autoplayActive: "Actif", autoplayPaused: "Pause",
     vrpOptLabel: "Gain : -39.7%", vrpDefaultLabel: "Trajet non optimisé",
     vrpOptBtn: "Réinitialiser", vrpDefaultBtn: "Optimiser",
-    vrpRunningBtn: "Optimisation en cours...",
+    vrpRunningBtn: "Optimisation...",
     typewriterRoles: [
       "Ingénieur Génie Logiciel & SI",
       "Transformation Digitale Industrielle",
@@ -1881,14 +2167,14 @@ document.getElementById('btnLangToggle').addEventListener('click', () => {
   applyLang(lang === 'fr' ? 'en' : 'fr');
 });
 
-/* ── DYNAMIC TYPEWRITER EFFECT (Inspiré d'Anas Portfolio) ── */
+/* ── DYNAMIC TYPEWRITER EFFECT (Vitesse diminuée et pause longue de 5s pour lecture attentive) ── */
 let twRoleIdx = 0;
 let twCharIdx = 0;
 let twIsDeleting = false;
 let twTimeout = null;
-const twSpeed = 75;
-const twDeleteSpeed = 35;
-const twHold = 2200;
+const twSpeed = 105;        /* Frappe calme et posée */
+const twDeleteSpeed = 45;   /* Effacement doux */
+const twHold = 5000;        /* 5 secondes de pause pour que le recruteur lise tranquillement */
 const twEl = document.getElementById('twDynamicRole');
 
 function tickTypewriter() {
@@ -1907,12 +2193,12 @@ function tickTypewriter() {
   let delay = twIsDeleting ? twDeleteSpeed : twSpeed;
 
   if (!twIsDeleting && twCharIdx === current.length) {
-    delay = twHold;
+    delay = twHold; /* Pause longue pour lecture attentive */
     twIsDeleting = true;
   } else if (twIsDeleting && twCharIdx === 0) {
     twIsDeleting = false;
     twRoleIdx = (twRoleIdx + 1) % roles.length;
-    delay = 350;
+    delay = 400;
   }
 
   twTimeout = setTimeout(tickTypewriter, delay);
@@ -1924,13 +2210,13 @@ function resetTypewriter() {
   twIsDeleting = false;
   tickTypewriter();
 }
-setTimeout(tickTypewriter, 400);
+setTimeout(tickTypewriter, 500);
 
-/* SLIDER CONTROLLER */
+/* SLIDER CONTROLLER (Ralenti à 16s par slide pour confort de lecture) */
 let cur = 0;
 const total = 6;
 let autoplay = true;
-const DUR = 7500;
+const DUR = 16000; /* 16 secondes par slide */
 let timer = null;
 
 const track = document.getElementById('sliderTrack');
@@ -2045,8 +2331,8 @@ vp.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive
 vp.addEventListener('touchend', e => {
   if (!tx) return;
   const d = tx - e.changedTouches[0].clientX;
-  if (d > 50) { nextSlide(); pauseAutoplay(); }
-  else if (d < -50) { prevSlide(); pauseAutoplay(); }
+  if (d > 45) { nextSlide(); pauseAutoplay(); }
+  else if (d < -45) { prevSlide(); pauseAutoplay(); }
   tx = null;
 }, { passive: true });
 
@@ -2059,7 +2345,7 @@ document.addEventListener('mousemove', e => {
   });
 });
 
-/* ── ANIMATED VRP SIMULATOR (Inspiré d'Anas & Métaheuristiques) ── */
+/* ── ANIMATED VRP SIMULATOR (Vitesse ralentie pour observer chaque étape) ── */
 let vrpOpt = false;
 let vrpAnimInterval = null;
 const vrpPath = document.getElementById('vrpPath');
@@ -2070,13 +2356,12 @@ const vrpToggle = document.getElementById('btnToggleVrp');
 const vrpStepEl = document.getElementById('vrpGenStep');
 
 vrpToggle.addEventListener('click', () => {
-  if (vrpAnimInterval) return; // already animating
+  if (vrpAnimInterval) return;
 
   vrpOpt = !vrpOpt;
   const c = dict[lang];
 
   if (vrpOpt) {
-    // Run Step-by-step Genetic Animation Loop
     vrpToggle.classList.add('running');
     vrpBtnEl.textContent = c.vrpRunningBtn || "Calcul...";
     let step = 0;
@@ -2108,10 +2393,9 @@ vrpToggle.addEventListener('click', () => {
         vrpToggle.classList.add('opt');
         if (vrpStepEl) vrpStepEl.textContent = 'Génération: 50 / 50 · Optimum Atteint (-39.7%)';
       }
-    }, 110);
+    }, 240); /* Vitesse diminuée pour apprécier l'algorithme */
 
   } else {
-    // Reset to unoptimized
     vrpPath.setAttribute('d', 'M 200 110 L 290 170 L 90 60 L 80 170 L 310 60 Z');
     vrpPath.setAttribute('stroke', '#94A3B8');
     vrpPath.setAttribute('stroke-width', '2');
@@ -2302,7 +2586,7 @@ function animCounter() {
   let start = null;
   const step = ts => {
     if (!start) start = ts;
-    const p = Math.min((ts - start) / 1200, 1);
+    const p = Math.min((ts - start) / 1400, 1);
     const ease = 1 - Math.pow(1 - p, 3);
     const v = Math.floor(ease * target);
     el.textContent = lang === 'fr' ? v.toLocaleString('fr-FR') + '+' : v.toLocaleString('en-US') + '+';
