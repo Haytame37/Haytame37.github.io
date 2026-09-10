@@ -1,18 +1,1061 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Haytame EL ATRAOUI — Ingénieur en Transformation Digitale Industrielle</title>
-    <meta name="description" content="Vitrine professionnelle de Haytame EL ATRAOUI — Ingénieur en Transformation Digitale Industrielle & Génie Logiciel | Industrie 4.0 | Software & Data Engineering." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230284c7'/><text x='50' y='65' font-size='46' font-family='sans-serif' font-weight='800' fill='white' text-anchor='middle'>HE</text></svg>" />
-    <script type="module" crossorigin src="/assets/index-BIJXYT5E.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DpEG7Vwm.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haytame EL ATRAOUI — Industrial Digital Transformation Engineer</title>
+  <meta name="description" content="Portfolio ultra-premium de Haytame EL ATRAOUI — Ingénieur Transformation Digitale Industrielle." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --white:    #FFFFFF;
+      --snow:     #F5F5F7;
+      --mist:     #E8E8ED;
+      --silver:   #86868B;
+      --graphite: #424245;
+      --onyx:     #1D1D1F;
+      --black:    #000000;
+      --font: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+      --mono: 'JetBrains Mono', 'SF Mono', monospace;
+      --r-sm: 10px; --r-md: 16px; --r-lg: 22px; --r-xl: 28px;
+      --s-xs: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --s-sm: 0 4px 16px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04);
+      --s-md: 0 12px 40px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
+      --s-lg: 0 24px 64px rgba(0,0,0,0.10), 0 8px 24px rgba(0,0,0,0.05);
+      --s-hover: 0 32px 80px rgba(0,0,0,0.13), 0 12px 32px rgba(0,0,0,0.07);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%; height: 100%; overflow: hidden;
+      background: var(--white); color: var(--onyx);
+      font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ── BACKGROUND ── */
+    .app-root {
+      width: 100vw; height: 100vh;
+      display: flex; flex-direction: column;
+      position: relative; overflow: hidden;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0,0,0,0.03) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 90% 110%, rgba(0,0,0,0.02) 0%, transparent 70%),
+        var(--white);
+    }
+    .bg-orb {
+      position: absolute; border-radius: 50%;
+      pointer-events: none; z-index: 0;
+      filter: blur(80px); opacity: 1;
+      animation: orbFloat 10s ease-in-out infinite;
+    }
+    .bg-orb-1 {
+      width: 700px; height: 700px;
+      top: -250px; right: -150px;
+      background: radial-gradient(circle, rgba(0,0,0,0.03) 0%, transparent 70%);
+    }
+    .bg-orb-2 {
+      width: 600px; height: 600px;
+      bottom: -200px; left: -150px;
+      background: radial-gradient(circle, rgba(0,0,0,0.025) 0%, transparent 70%);
+      animation-delay: 5s;
+    }
+    @keyframes orbFloat {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      50% { transform: translate(15px,-15px) scale(1.04); }
+    }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      height: 64px; min-height: 64px;
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 0.5px solid rgba(0,0,0,0.09);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 28px; z-index: 100; position: relative;
+    }
+    .tl { display: flex; align-items: center; gap: 12px; }
+    .mono-badge {
+      width: 36px; height: 36px; border-radius: 9px;
+      background: var(--onyx); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700; font-family: var(--mono);
+      letter-spacing: 0.04em; flex-shrink: 0;
+    }
+    .tname { font-size: 15px; font-weight: 600; color: var(--onyx); letter-spacing: -0.01em; }
+    .tsub { font-size: 11px; color: var(--silver); font-weight: 500; font-family: var(--mono); margin-top: 1px; }
+
+    .tc {
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(0,0,0,0.04); padding: 4px 10px;
+      border-radius: 30px; border: 0.5px solid rgba(0,0,0,0.07);
+    }
+    .ctrl {
+      background: transparent; border: none; cursor: pointer;
+      color: var(--graphite); width: 28px; height: 28px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 13px;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+    .ctrl:hover { background: rgba(0,0,0,0.07); color: var(--onyx); transform: scale(1.1); }
+    .aplay {
+      display: flex; align-items: center; gap: 6px;
+      padding: 4px 12px; border-radius: 20px;
+      font-size: 11px; font-weight: 600; font-family: var(--mono);
+      color: var(--graphite); background: transparent; border: none; cursor: pointer;
+      transition: color 0.2s;
+    }
+    .aplay.active { color: var(--onyx); }
+    .sctr { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--silver); letter-spacing: 0.06em; padding: 0 4px; }
+
+    .tr { display: flex; align-items: center; gap: 8px; }
+    .lbtn {
+      padding: 6px 12px; border-radius: 20px;
+      font-size: 11px; font-weight: 700; font-family: var(--mono);
+      background: transparent; border: 0.5px solid var(--mist);
+      color: var(--graphite); cursor: pointer; transition: all 0.2s;
+    }
+    .lbtn:hover { border-color: var(--graphite); color: var(--onyx); }
+    .pill-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 14px; border-radius: 20px;
+      font-size: 12px; font-weight: 600;
+      text-decoration: none; cursor: pointer; border: none;
+      transition: all 0.25s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .pill-ghost {
+      background: transparent; border: 0.5px solid var(--mist);
+      color: var(--graphite); font-family: var(--mono); font-size: 11.5px;
+    }
+    .pill-ghost:hover { border-color: var(--onyx); color: var(--onyx); transform: translateY(-1px); }
+    .pill-solid {
+      background: var(--onyx); color: var(--white);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .pill-solid:hover { background: var(--black); box-shadow: 0 6px 20px rgba(0,0,0,0.28); transform: translateY(-1px); }
+
+    /* ── PROGRESS ── */
+    .prog-track { height: 2px; width: 100%; background: var(--mist); position: relative; overflow: hidden; z-index: 99; }
+    .prog-bar {
+      height: 100%; background: linear-gradient(90deg, var(--graphite), var(--onyx));
+      transform-origin: left; transform: scaleX(0); will-change: transform;
+    }
+    .prog-bar.running { animation: pfill 7.5s linear forwards; }
+    @keyframes pfill { 0% { transform: scaleX(0); } 100% { transform: scaleX(1); } }
+
+    /* ── SLIDER ── */
+    .sv { flex: 1; width: 100%; position: relative; overflow: hidden; z-index: 10; }
+    .st {
+      display: flex; width: 100%; height: 100%;
+      transition: transform 0.75s cubic-bezier(0.16,1,0.3,1);
+      will-change: transform;
+    }
+    .ss {
+      flex: 0 0 100%; width: 100%; height: 100%;
+      overflow-y: auto; scrollbar-width: none;
+      padding: 28px 52px; display: flex; align-items: center; justify-content: center;
+    }
+    .ss::-webkit-scrollbar { display: none; }
+    .si { width: 100%; max-width: 1200px; margin: auto; position: relative; z-index: 10; }
+
+    .farrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 40px; height: 40px; border-radius: 12px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border: 0.5px solid rgba(0,0,0,0.09);
+      box-shadow: var(--s-sm);
+      color: var(--onyx); display: flex; align-items: center; justify-content: center;
+      cursor: pointer; z-index: 40; font-size: 14px;
+      transition: all 0.25s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .farrow:hover { background: var(--onyx); color: var(--white); box-shadow: var(--s-md); transform: translateY(-50%) scale(1.08); }
+    .farrow.prev { left: 14px; }
+    .farrow.next { right: 14px; }
+
+    /* ── BOTTOM NAV ── */
+    .bnav {
+      height: 56px; min-height: 56px;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-top: 0.5px solid rgba(0,0,0,0.07);
+      display: flex; align-items: center; justify-content: center;
+      padding: 0 16px; z-index: 50;
+    }
+    .ntabs { display: flex; align-items: center; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+    .ntabs::-webkit-scrollbar { display: none; }
+    .ntab {
+      display: flex; align-items: center; gap: 7px;
+      padding: 6px 14px; border-radius: 20px;
+      border: none; background: transparent;
+      color: var(--silver); font-size: 12px; font-weight: 500;
+      cursor: pointer; white-space: nowrap;
+      transition: all 0.25s cubic-bezier(0.25,0.46,0.45,0.94);
+      font-family: var(--font);
+    }
+    .ntab:hover { color: var(--onyx); background: rgba(0,0,0,0.04); }
+    .ntab.active { background: var(--onyx); color: var(--white); box-shadow: var(--s-xs); }
+    .ntnum { font-family: var(--mono); font-size: 10.5px; opacity: 0.7; }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--white); border: 0.5px solid var(--mist);
+      border-radius: var(--r-lg); padding: 28px 32px;
+      box-shadow: var(--s-sm); position: relative;
+      transition: box-shadow 0.4s cubic-bezier(0.25,0.46,0.45,0.94),
+                  transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94),
+                  border-color 0.4s;
+      overflow: hidden;
+    }
+    .card::before {
+      content: ''; position: absolute;
+      width: 300px; height: 300px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,0,0,0.04) 0%, transparent 70%);
+      transform: translate(-50%,-50%) scale(0);
+      pointer-events: none;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      opacity: 0; z-index: 0;
+      left: var(--mx, 50%); top: var(--my, 50%);
+    }
+    .card:hover::before { transform: translate(-50%,-50%) scale(3); opacity: 1; }
+    .card:hover { box-shadow: var(--s-hover); border-color: rgba(0,0,0,0.12); transform: translateY(-3px); }
+    .card > * { position: relative; z-index: 1; }
+
+    .hero-card {
+      background: var(--white); border: 0.5px solid rgba(0,0,0,0.08);
+      border-radius: var(--r-xl); padding: 40px 44px;
+      box-shadow: var(--s-lg); position: relative; overflow: hidden;
+    }
+
+    /* ── REVEAL ── */
+    .rev {
+      opacity: 0; transform: translateY(26px);
+      transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1),
+                  transform 0.7s cubic-bezier(0.16,1,0.3,1);
+    }
+    .rev.on { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 0.05s; }
+    .d2 { transition-delay: 0.13s; }
+    .d3 { transition-delay: 0.21s; }
+    .d4 { transition-delay: 0.30s; }
+    .d5 { transition-delay: 0.39s; }
+    .d6 { transition-delay: 0.48s; }
+
+    /* ── HERO SLIDE ── */
+    .badge-row { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+    .avail-b {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: #F0FBF0; border: 0.5px solid #B4DDB4;
+      padding: 5px 14px; border-radius: 30px;
+      font-size: 12px; font-weight: 600; color: #2A5F2A;
+    }
+    .pdot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: #34C759; flex-shrink: 0;
+      box-shadow: 0 0 0 3px rgba(52,199,89,0.22);
+      animation: pdotA 2.5s ease-in-out infinite;
+    }
+    @keyframes pdotA {
+      0%,100% { box-shadow: 0 0 0 3px rgba(52,199,89,0.22); }
+      50% { box-shadow: 0 0 0 7px rgba(52,199,89,0.05); }
+    }
+    .role-b {
+      display: inline-flex; align-items: center;
+      background: var(--snow); border: 0.5px solid var(--mist);
+      padding: 5px 14px; border-radius: 30px;
+      font-size: 12px; font-weight: 600; color: var(--graphite);
+      font-family: var(--mono);
+    }
+    .hero-name {
+      font-size: clamp(32px, 4.5vw, 56px); font-weight: 700;
+      letter-spacing: -0.03em; line-height: 1.08;
+      color: var(--onyx); margin-bottom: 4px;
+    }
+    .hero-name em { color: var(--silver); font-style: normal; }
+    .tw-cur {
+      display: inline-block; width: 2px; height: 0.85em;
+      background: var(--onyx); margin-left: 2px;
+      vertical-align: text-bottom;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0; } }
+    .hero-base {
+      font-size: clamp(16px,2.2vw,22px); font-weight: 500;
+      color: var(--graphite); margin-bottom: 10px;
+      letter-spacing: -0.01em; line-height: 1.3;
+    }
+    .hdiv {
+      height: 1px; width: 72px;
+      background: linear-gradient(90deg, var(--onyx), transparent);
+      margin-bottom: 14px; border-radius: 1px;
+    }
+    .hero-desc {
+      font-size: 15px; line-height: 1.65; color: var(--graphite);
+      max-width: 780px; margin-bottom: 22px;
+    }
+
+    .pills { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 24px; }
+    .pill {
+      font-family: var(--mono); font-size: 11.5px; font-weight: 500;
+      color: var(--graphite); background: var(--snow);
+      border: 0.5px solid var(--mist);
+      padding: 5px 12px; border-radius: 7px;
+      transition: all 0.22s; cursor: default;
+    }
+    .pill:hover { background: var(--onyx); color: var(--white); border-color: var(--onyx); transform: translateY(-1px); }
+
+    .cgrid {
+      display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 10px; margin-bottom: 20px;
+    }
+    .ci {
+      display: flex; align-items: center; gap: 11px;
+      padding: 11px 15px; border-radius: var(--r-md);
+      background: var(--snow); border: 0.5px solid var(--mist);
+      text-decoration: none; color: inherit;
+      transition: all 0.28s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .ci:hover { background: var(--onyx); color: var(--white); border-color: var(--onyx); box-shadow: var(--s-md); transform: translateY(-2px); }
+    .cicon {
+      width: 36px; height: 36px; border-radius: 9px;
+      background: var(--white); border: 0.5px solid var(--mist);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0; transition: all 0.28s;
+    }
+    .ci:hover .cicon { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.2); }
+    .clabel {
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.07em; color: var(--silver); margin-bottom: 2px;
+      font-family: var(--mono); transition: color 0.28s;
+    }
+    .ci:hover .clabel { color: rgba(255,255,255,0.55); }
+    .cval { font-size: 13px; font-weight: 600; color: var(--onyx); transition: color 0.28s; }
+    .ci:hover .cval { color: var(--white); }
+
+    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 22px; }
+    .cta-p {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 24px; border-radius: var(--r-md);
+      background: var(--onyx); color: var(--white);
+      font-size: 14px; font-weight: 600; text-decoration: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .cta-p:hover { background: var(--black); box-shadow: 0 8px 28px rgba(0,0,0,0.3); transform: translateY(-2px); }
+    .cta-s {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 20px; border-radius: var(--r-md);
+      background: transparent; color: var(--graphite);
+      font-size: 14px; font-weight: 600; text-decoration: none;
+      border: 0.5px solid var(--mist);
+      transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+      cursor: pointer; font-family: var(--font);
+    }
+    .cta-s:hover { background: var(--onyx); color: var(--white); border-color: var(--onyx); transform: translateY(-2px); }
+
+    .pillars {
+      display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+      gap: 14px; padding-top: 18px; border-top: 0.5px solid var(--mist);
+    }
+    .pillar { display: flex; gap: 11px; }
+    .pnum {
+      width: 28px; height: 28px; border-radius: 7px;
+      background: var(--onyx); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; font-family: var(--mono); flex-shrink: 0;
+    }
+    .pt { font-size: 13px; font-weight: 700; color: var(--onyx); margin-bottom: 2px; }
+    .pd { font-size: 12px; color: var(--silver); line-height: 1.45; }
+
+    /* ── SLIDE HEADER ── */
+    .shd { margin-bottom: 22px; }
+    .stag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--mono); font-size: 10.5px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--graphite); background: var(--snow);
+      border: 0.5px solid var(--mist);
+      padding: 4px 12px; border-radius: 20px; margin-bottom: 10px;
+    }
+    .stitle {
+      font-size: clamp(20px,3vw,29px); font-weight: 700; color: var(--onyx);
+      letter-spacing: -0.02em; margin-bottom: 7px;
+    }
+    .sdesc { font-size: 14px; color: var(--silver); max-width: 800px; line-height: 1.55; }
+
+    /* ── GRID ── */
+    .g2 { display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap: 20px; }
+    .g3 { display: grid; grid-template-columns: repeat(auto-fit,minmax(270px,1fr)); gap: 16px; }
+
+    /* ── STAT BOXES ── */
+    .sbox { background: var(--snow); border: 0.5px solid var(--mist); border-radius: var(--r-md); padding: 20px 22px; }
+    .sbox-g { background: #F0FBF0; border: 0.5px solid #B8DEB8; }
+    .snum { font-size: 32px; font-weight: 800; color: var(--onyx); letter-spacing: -0.03em; }
+    .snum-g { color: #1A5C1A; }
+    .slbl { font-size: 13px; font-weight: 600; color: var(--graphite); margin: 2px 0; }
+    .slbl-g { color: #2A6F2A; }
+    .sdsc { font-size: 12px; color: var(--silver); line-height: 1.4; }
+    .sdsc-g { color: #3A7A3A; }
+
+    /* ── SKILL TAGS ── */
+    .sk {
+      display: inline-flex; font-size: 11px; font-weight: 600;
+      padding: 4px 9px; border-radius: 6px;
+      background: var(--snow); border: 0.5px solid var(--mist);
+      color: var(--graphite); transition: all 0.2s;
+    }
+    .sk:hover { background: var(--onyx); color: var(--white); border-color: var(--onyx); }
+    .stags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    /* ── FEATURE LIST ── */
+    .flist { padding-left: 18px; font-size: 13px; color: var(--graphite); line-height: 1.65; }
+    .flist li { margin-bottom: 3px; }
+
+    /* ── EDU CARDS ── */
+    .edu {
+      background: var(--white); border: 0.5px solid var(--mist);
+      border-radius: var(--r-md); padding: 16px 20px;
+      box-shadow: var(--s-xs);
+      border-left-width: 3px !important; border-left-style: solid !important;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .edu:hover { box-shadow: var(--s-md); transform: translateY(-2px); }
+    .eper { font-size: 11px; font-weight: 700; font-family: var(--mono); padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 5px; }
+    .etitle { font-size: 14.5px; font-weight: 700; color: var(--onyx); margin-bottom: 3px; }
+    .eschool { font-size: 12.5px; font-weight: 600; margin-bottom: 5px; }
+    .edesc { font-size: 12px; color: var(--silver); line-height: 1.45; }
+
+    /* ── CONTACT SLIDE ── */
+    .chero { text-align: center; max-width: 680px; margin: auto; }
+    .chero-icon { font-size: 52px; margin-bottom: 14px; animation: fi 3s ease-in-out infinite; }
+    @keyframes fi { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+    .chero-t { font-size: clamp(22px,3.5vw,36px); font-weight: 700; color: var(--onyx); letter-spacing: -0.025em; margin-bottom: 12px; }
+    .chero-s { font-size: 16px; color: var(--silver); line-height: 1.6; max-width: 500px; margin: 0 auto 28px; }
+    .cbtns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 26px; }
+    .cl {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 22px; border-radius: var(--r-md);
+      font-size: 14px; font-weight: 600; text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .cl-d { background: var(--onyx); color: var(--white); box-shadow: 0 4px 14px rgba(0,0,0,0.2); }
+    .cl-d:hover { background: var(--black); box-shadow: 0 8px 28px rgba(0,0,0,0.3); transform: translateY(-2px); }
+    .cl-g { background: #F0FBF0; color: #2A5F2A; border: 0.5px solid #B4DDB4; }
+    .cl-g:hover { background: #2A5F2A; color: var(--white); transform: translateY(-2px); }
+    .cl-o { background: var(--white); color: var(--graphite); border: 0.5px solid var(--mist); }
+    .cl-o:hover { background: var(--onyx); color: var(--white); border-color: var(--onyx); transform: translateY(-2px); }
+
+    /* ── VRP ── */
+    .vrp-wrap { background: var(--snow); border: 0.5px solid var(--mist); border-radius: var(--r-md); overflow: hidden; height: 170px; }
+    .vrp-btn {
+      padding: 7px 14px; border-radius: 9px;
+      background: var(--onyx); color: var(--white);
+      border: none; font-size: 12px; font-weight: 600;
+      cursor: pointer; font-family: var(--font); transition: all 0.25s;
+    }
+    .vrp-btn:hover { background: var(--black); transform: translateY(-1px); }
+    .vrp-btn.opt { background: #F0FBF0; color: #2A5F2A; border: 0.5px solid #B4DDB4; }
+
+    /* ── UTILS ── */
+    .lang-on { color: var(--onyx); font-weight: 800; }
+    .lang-off { opacity: 0.35; }
+    .mr { margin-right: auto; }
+  </style>
+</head>
+<body>
+<div class="app-root">
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="tl">
+      <div class="mono-badge">HE</div>
+      <div>
+        <div class="tname">Haytame EL ATRAOUI</div>
+        <div class="tsub" id="topbarSub">Industrial Digital Transformation Engineer</div>
+      </div>
+    </div>
+    <div class="tc">
+      <button class="ctrl" id="btnPrev">◀</button>
+      <button class="aplay active" id="btnAutoplay"><span id="autoplayIcon">⏸</span><span id="autoplayText">Actif</span></button>
+      <span class="sctr" id="slideCounter">01 / 06</span>
+      <button class="ctrl" id="btnNext">▶</button>
+    </div>
+    <div class="tr">
+      <button class="lbtn" id="btnLangToggle">🌐 <span id="tagFR" class="lang-on">FR</span> | <span id="tagEN" class="lang-off">EN</span></button>
+      <a href="tel:+212696547432" class="pill-btn pill-ghost">📞 +212 696 547 432</a>
+      <a href="Haytame_El_Atraoui_CV.pdf" download class="pill-btn pill-solid">⬇ <span id="btnCvText">CV PDF</span></a>
+    </div>
+  </header>
+
+  <!-- PROGRESS -->
+  <div class="prog-track"><div class="prog-bar running" id="progressBar"></div></div>
+
+  <!-- SLIDER -->
+  <main class="sv" id="sliderViewport">
+    <button class="farrow prev" id="arrowPrev">◀</button>
+    <button class="farrow next" id="arrowNext">▶</button>
+    <div class="st" id="sliderTrack">
+
+      <!-- SLIDE 1 -->
+      <section class="ss" data-slide="0">
+        <div class="si">
+          <div class="hero-card">
+            <div class="badge-row rev d1">
+              <div class="avail-b"><span class="pdot"></span><span id="s1Badge">Disponible — Stage PFE &amp; Ingénieur · Mobilité Flexible</span></div>
+              <div class="role-b"><span id="s1BadgeRole">● Digital Transformation Engineer</span></div>
+            </div>
+            <h1 class="hero-name rev d2">Haytame <em>EL ATRAOUI</em><span class="tw-cur"></span></h1>
+            <div class="rev d2">
+              <p class="hero-base" id="s1Baseline">Where Industry Meets Software.</p>
+              <div class="hdiv"></div>
+            </div>
+            <p class="hero-desc rev d3" id="s1Desc">I turn complex industrial problems into clean, scalable digital solutions.</p>
+            <div class="pills rev d3">
+              <span class="pill">Industry 4.0</span><span class="pill">Software &amp; Data</span>
+              <span class="pill">Automation</span><span class="pill">AI</span>
+              <span class="pill">Cloud</span><span class="pill">IoT</span><span class="pill">SAP ERP</span>
+            </div>
+            <div class="cgrid rev d4">
+              <a href="tel:+212696547432" class="ci">
+                <div class="cicon">📞</div>
+                <div><div class="clabel" id="s1PhoneLabel">Téléphone</div><div class="cval">+212 696 547 432</div></div>
+              </a>
+              <a href="mailto:haytameelatraoui@gmail.com" class="ci">
+                <div class="cicon">✉️</div>
+                <div><div class="clabel" id="s1MailLabel">Email</div><div class="cval">haytameelatraoui@gmail.com</div></div>
+              </a>
+              <div class="ci">
+                <div class="cicon">📍</div>
+                <div><div class="clabel" id="s1LocLabel">Localisation</div><div class="cval" id="s1LocVal">Mohammédia, Maroc · Mobilité Flexible</div></div>
+              </div>
+              <a href="https://github.com/Haytame37" target="_blank" rel="noopener" class="ci">
+                <div class="cicon">💻</div>
+                <div><div class="clabel" id="s1CodeLabel">GitHub</div><div class="cval">github.com/Haytame37</div></div>
+              </a>
+            </div>
+            <div class="cta-row rev d5">
+              <a href="Haytame_El_Atraoui_CV.pdf" download class="cta-p">⬇ <span id="s1DownloadBtn">Télécharger le CV (PDF)</span></a>
+              <a href="https://wa.me/212696547432" target="_blank" rel="noopener" class="cta-s" style="border-color:#B4DDB4;color:#2A5F2A;">💬 <span id="s1WhatsappBtn">WhatsApp</span></a>
+              <a href="https://www.linkedin.com/in/haytame-el-atraoui" target="_blank" rel="noopener" class="cta-s">💼 LinkedIn</a>
+              <button class="cta-s" onclick="goToSlide(1)"><span id="s1NextBtn">Réalisations Safran</span> →</button>
+            </div>
+            <div class="pillars rev d6">
+              <div class="pillar"><div class="pnum">1</div><div><div class="pt" id="pill1Title">Génie Logiciel &amp; Systèmes d'Entreprise</div><div class="pd" id="pill1Desc">Python, Java/Spring Boot, Flutter — architectures résilientes.</div></div></div>
+              <div class="pillar"><div class="pnum">2</div><div><div class="pt" id="pill2Title">Digitalisation Industrielle &amp; SAP ERP</div><div class="pd" id="pill2Desc">Automatisation de flux qualité, réduction des opérations manuelles.</div></div></div>
+              <div class="pillar"><div class="pnum">3</div><div><div class="pt" id="pill3Title">IoT, Analytics &amp; Optimisation</div><div class="pd" id="pill3Desc">Capteurs MQTT/ESP32, tableaux de bord TRS/OEE, algorithmes VRP/TSP.</div></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 2 -->
+      <section class="ss" data-slide="1">
+        <div class="si">
+          <div class="shd">
+            <div class="stag rev d1" id="s2Tag">🛡️ Expérience Opérationnelle Validée</div>
+            <h2 class="stitle rev d1" id="s2Title">Safran — Stage Digitalisation Industrielle &amp; Qualité</h2>
+            <p class="sdesc rev d2" id="s2Desc">Analyse, automatisation et fiabilisation des flux de données qualité sous SAP ERP, Excel et VBA (Août – Sept 2026).</p>
+          </div>
+          <div class="g2">
+            <div class="card rev d2">
+              <h3 style="font-size:17px;font-weight:700;color:var(--onyx);margin-bottom:10px;" id="s2Card1Title">Application Desktop Autonome Python &amp; VBA</h3>
+              <p style="font-size:13.5px;color:var(--graphite);line-height:1.6;margin-bottom:14px;" id="s2Card1Desc">Développement d'une application Python autonome assurant le parsing, le nettoyage et la consolidation automatique des fichiers Excel extraits de SAP ERP.</p>
+              <div style="background:var(--snow);border:0.5px solid var(--mist);border-radius:var(--r-sm);padding:14px;margin-bottom:14px;">
+                <ul class="flist">
+                  <li id="s2M1">Analyse et optimisation du workflow qualité sous SAP ERP.</li>
+                  <li id="s2M2">Développement d'une application Desktop autonome en Python pour les fichiers SAP.</li>
+                  <li id="s2M3">Conception de règles métiers paramétrables et modèles Excel/VBA réutilisables.</li>
+                  <li id="s2M4">Standardisation des livrables et suppression des ressaisies manuelles.</li>
+                </ul>
+              </div>
+              <div class="stags"><span class="sk">SAP ERP</span><span class="sk">Python</span><span class="sk">VBA</span><span class="sk">Excel</span><span class="sk">Qualité Aéronautique</span></div>
+            </div>
+            <div class="card rev d3" style="display:flex;flex-direction:column;gap:14px;">
+              <h3 style="font-size:17px;font-weight:700;color:var(--onyx);" id="s2ImpactTitle">Impact &amp; Fiabilité Opérationnelle</h3>
+              <div class="sbox">
+                <div class="snum" id="s2Stat1Val">4 500+</div>
+                <div class="slbl" id="s2Stat1Title">Dossiers validés sur jeux volumineux</div>
+                <div class="sdsc" id="s2Stat1Desc">Outil validé et mis en production pour une utilisation directe par les équipes opérationnelles.</div>
+              </div>
+              <div class="sbox sbox-g">
+                <div class="snum snum-g" id="s2Stat2Val" style="font-size:22px;">Standardisation &amp; Fiabilité</div>
+                <div class="slbl slbl-g" id="s2Stat2Title">Réduction Drastique des Erreurs</div>
+                <div class="sdsc sdsc-g" id="s2Stat2Desc">Automatisation rigoureuse des règles de gestion, éliminant les ressaisies manuelles à risque.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 3 -->
+      <section class="ss" data-slide="2">
+        <div class="si">
+          <div class="shd">
+            <div class="stag rev d1" id="s3Tag">⚙️ Génie Logiciel &amp; Recherche Opérationnelle</div>
+            <h2 class="stitle rev d1" id="s3Title">Projets Concrets &amp; Simulateur d'Optimisation</h2>
+            <p class="sdesc rev d2" id="s3Desc">Applications connectées terrain (Flutter, Offline-First) et démonstrateur interactif d'optimisation de tournées (VRP/TSP).</p>
+          </div>
+          <div class="g2">
+            <div class="card rev d2">
+              <h3 style="font-size:17px;font-weight:700;color:var(--onyx);margin-bottom:10px;" id="s3ZenithTitle">Application Mobile Field-Service (Zenithsoft)</h3>
+              <p style="font-size:13.5px;color:var(--graphite);line-height:1.6;margin-bottom:14px;" id="s3ZenithDesc">Application mobile cross-platform en Flutter avec persistance locale SQLite et synchronisation automatique avec une API REST.</p>
+              <div style="background:var(--snow);border:0.5px solid var(--mist);border-radius:var(--r-sm);padding:14px;margin-bottom:14px;">
+                <ul class="flist">
+                  <li id="s3P1">Gestion d'interventions hors réseau (Offline-first).</li>
+                  <li id="s3P2">Contrôle d'accès RBAC (technicien, manager, admin).</li>
+                  <li id="s3P3">Géolocalisation, signature électronique et reporting.</li>
+                </ul>
+              </div>
+              <div class="stags"><span class="sk">Flutter</span><span class="sk">SQLite</span><span class="sk">REST API</span><span class="sk">RBAC</span></div>
+            </div>
+            <div class="card rev d3">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                <h3 style="font-size:17px;font-weight:700;color:var(--onyx);" id="s3VrpTitle">Simulateur d'Optimisation VRP</h3>
+                <button class="vrp-btn" id="btnToggleVrp"><span id="s3VrpBtn">Optimiser</span></button>
+              </div>
+              <div class="vrp-wrap">
+                <svg id="vrpSvg" width="100%" height="100%" viewBox="0 0 400 220">
+                  <defs><filter id="glow"><feGaussianBlur stdDeviation="2.5" result="cb"/><feMerge><feMergeNode in="cb"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+                  <path id="vrpPath" d="M 200 110 L 290 170 L 90 60 L 80 170 L 310 60 Z" stroke="#CCCCCC" stroke-width="2" fill="none"/>
+                  <circle cx="200" cy="110" r="11" fill="var(--onyx)" filter="url(#glow)"/>
+                  <text x="216" y="115" font-size="11" font-weight="700" fill="var(--onyx)" font-family="-apple-system,sans-serif">Hub</text>
+                  <circle cx="90" cy="60" r="7" fill="var(--graphite)"/>
+                  <text x="102" y="56" font-size="10" font-weight="600" fill="var(--graphite)" font-family="-apple-system,sans-serif">Atelier A</text>
+                  <circle cx="310" cy="60" r="7" fill="var(--graphite)"/>
+                  <text x="246" y="55" font-size="10" font-weight="600" fill="var(--graphite)" font-family="-apple-system,sans-serif">Atelier B</text>
+                  <circle cx="290" cy="170" r="7" fill="var(--graphite)"/>
+                  <text x="220" y="188" font-size="10" font-weight="600" fill="var(--graphite)" font-family="-apple-system,sans-serif">Ligne C</text>
+                  <circle cx="80" cy="170" r="7" fill="var(--graphite)"/>
+                  <text x="92" y="174" font-size="10" font-weight="600" fill="var(--graphite)" font-family="-apple-system,sans-serif">Stock D</text>
+                </svg>
+              </div>
+              <div style="display:flex;justify-content:space-between;margin-top:9px;font-size:13px;align-items:center;">
+                <span style="font-weight:600;color:var(--graphite);"><span id="s3DistLabel">Distance :</span> <strong id="vrpDistVal" style="color:var(--onyx);">680 km</strong></span>
+                <span id="vrpGain" style="font-weight:600;color:var(--silver);">Trajet non optimisé</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4 -->
+      <section class="ss" data-slide="3">
+        <div class="si">
+          <div class="shd">
+            <div class="stag rev d1" id="s4Tag">📊 Technical Skills</div>
+            <h2 class="stitle rev d1" id="s4Title">Compétences Techniques &amp; Spécialités Métier</h2>
+            <p class="sdesc rev d2" id="s4Desc">Stack logicielle complète : développement full-stack, enterprise ERP, données industrielles et optimisation.</p>
+          </div>
+          <div class="g3">
+            <div class="card rev d2">
+              <h3 style="font-size:15px;font-weight:700;color:var(--onyx);margin-bottom:10px;" id="s4Sk1Title">Programming &amp; Backend</h3>
+              <div class="stags" style="margin-bottom:10px;">
+                <span class="sk">Python</span><span class="sk">Java</span><span class="sk">Dart/Flutter</span>
+                <span class="sk">JavaScript/TS</span><span class="sk">SQL &amp; PL/SQL</span>
+                <span class="sk">Spring Boot</span><span class="sk">React/Next.js</span><span class="sk">FastAPI &amp; Flask</span>
+              </div>
+              <p style="font-size:12px;color:var(--silver);" id="s4Sk1Desc">Projets : GMPP Suite (ERP Spring Boot/React), RIFQA (React/Firebase/Leaflet).</p>
+            </div>
+            <div class="card rev d3">
+              <h3 style="font-size:15px;font-weight:700;color:var(--onyx);margin-bottom:10px;" id="s4Sk2Title">Enterprise, ERP &amp; Data</h3>
+              <div class="stags" style="margin-bottom:10px;">
+                <span class="sk">SAP ERP</span><span class="sk">Odoo</span><span class="sk">PostgreSQL</span>
+                <span class="sk">MySQL &amp; SQLite</span><span class="sk">Pandas &amp; NumPy</span><span class="sk">Plotly &amp; Dashboards</span>
+              </div>
+              <p style="font-size:12px;color:var(--silver);" id="s4Sk2Desc">Projets : Industrial OEE Analytics Dashboard, OptiStock Decision Support.</p>
+            </div>
+            <div class="card rev d4">
+              <h3 style="font-size:15px;font-weight:700;color:var(--onyx);margin-bottom:10px;" id="s4Sk3Title">Industry 4.0, IoT &amp; DevOps</h3>
+              <div class="stags" style="margin-bottom:10px;">
+                <span class="sk">Industry 4.0</span><span class="sk">IoT &amp; ESP32</span><span class="sk">MQTT</span>
+                <span class="sk">Docker &amp; Linux</span><span class="sk">Git/GitHub</span><span class="sk">OpenStack &amp; n8n</span>
+              </div>
+              <p style="font-size:12px;color:var(--silver);" id="s4Sk3Desc">Optimisation logistique, calcul TRS/OEE et micro-services industriels.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5 -->
+      <section class="ss" data-slide="4">
+        <div class="si">
+          <div class="shd">
+            <div class="stag rev d1" id="s5Tag">🎓 Education &amp; Leadership</div>
+            <h2 class="stitle rev d1" id="s5Title">Parcours Académique &amp; Activités de Leadership</h2>
+            <p class="sdesc rev d2" id="s5Desc">Les 4 formations diplômantes exactes du CV, complétées par les responsabilités associatives.</p>
+          </div>
+          <div class="g3 rev d3" style="margin-bottom:14px;">
+            <div class="edu" style="border-left-color:#1D1D1F;">
+              <span class="eper" style="background:#F5F5F7;color:#1D1D1F;" id="s5Deg1Period">2024 – Présent (Promo 2026)</span>
+              <div class="etitle" id="s5Deg1Title">Diplôme d'Ingénieur — Transformation Digitale Industrielle</div>
+              <div class="eschool" style="color:#1D1D1F;" id="s5Deg1School">ENSA Béni Mellal · Université Sultan Moulay Slimane</div>
+              <div class="edesc" id="s5Deg1Desc">Digitalisation industrielle, systèmes logiciels, cloud, IoT, automatisation, Industrie 4.0.</div>
+            </div>
+            <div class="edu" style="border-left-color:#424245;">
+              <span class="eper" style="background:#F5F5F7;color:#424245;" id="s5Deg2Period">2023 – 2024</span>
+              <div class="etitle" id="s5Deg2Title">Licence SMI — Bases de Données &amp; Génie Logiciel</div>
+              <div class="eschool" style="color:#424245;" id="s5Deg2School">Faculté des Sciences Ben M'Sik · Université Hassan II</div>
+              <div class="edesc" id="s5Deg2Desc">Bases de données, développement logiciel, traitement et analyse de données.</div>
+            </div>
+            <div class="edu" style="border-left-color:#86868B;">
+              <span class="eper" style="background:#F5F5F7;color:#86868B;" id="s5Deg3Period">2021 – 2023</span>
+              <div class="etitle" id="s5Deg3Title">DEUG — Sciences Mathématiques &amp; Informatique</div>
+              <div class="eschool" style="color:#86868B;" id="s5Deg3School">Université Hassan II de Casablanca</div>
+              <div class="edesc" id="s5Deg3Desc">Fondements mathématiques, algèbre, analyse, probabilités et algorithmique.</div>
+            </div>
+            <div class="edu" style="border-left-color:#AEAEB2;">
+              <span class="eper" style="background:#F5F5F7;color:#6C6C70;" id="s5Deg4Period">2021</span>
+              <div class="etitle" id="s5Deg4Title">Baccalauréat — Sciences Mathématiques A</div>
+              <div class="eschool" style="color:#6C6C70;" id="s5Deg4School">Filière d'Excellence Scientifique · Maroc</div>
+              <div class="edesc" id="s5Deg4Desc">Logique mathématique, abstraction et physique appliquée.</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px;" class="rev d5">
+            <div class="card" style="padding:14px 18px;display:flex;align-items:center;gap:12px;">
+              <div style="font-size:24px;flex-shrink:0;">🏆</div>
+              <div><div style="font-size:13px;font-weight:700;color:var(--onyx);" id="s5Lead1Title">Président — Club Industrie 4.0 &amp; Organisateur Moroccan TSP Competition</div><div style="font-size:12px;color:var(--silver);margin-top:2px;" id="s5Lead1Desc">ENSA Béni Mellal (2025–2026) · Événements nationaux d'optimisation logistique.</div></div>
+            </div>
+            <div class="card" style="padding:14px 18px;display:flex;align-items:center;gap:12px;">
+              <div style="font-size:24px;flex-shrink:0;">🌐</div>
+              <div><div style="font-size:13px;font-weight:700;color:var(--onyx);" id="s5Lead2Title">Langues &amp; Certifications Internationales</div><div style="font-size:12px;color:var(--silver);margin-top:2px;" id="s5Lead2Desc">English — C1 (Certified Rosetta Stone) · French — B2 · Arabic — Native</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6 -->
+      <section class="ss" data-slide="5">
+        <div class="si">
+          <div class="card" style="padding:52px 40px;border-radius:var(--r-xl);">
+            <div class="chero">
+              <div class="chero-icon">✦</div>
+              <h2 class="chero-t rev d1" id="s6Title">Échangeons sur vos Projets &amp; Opportunités</h2>
+              <p class="chero-s rev d2" id="s6Desc">Disponible pour Stage PFE &amp; Opportunités d'Ingénieur. Double compétence Software Engineering &amp; Performance Industrielle.</p>
+              <div class="cbtns rev d3">
+                <a href="tel:+212696547432" class="cl cl-d">📞 <span id="s6BtnCall">Appeler +212 696 547 432</span></a>
+                <a href="https://wa.me/212696547432" target="_blank" rel="noopener" class="cl cl-g">💬 <span id="s6BtnWhatsapp">WhatsApp</span></a>
+                <a href="mailto:haytameelatraoui@gmail.com" class="cl cl-o">✉️ <span id="s6BtnMail">Email</span></a>
+                <a href="Haytame_El_Atraoui_CV.pdf" download class="cl cl-d">⬇ <span id="s6BtnCv">CV (PDF)</span></a>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:center;gap:20px;padding-top:18px;border-top:0.5px solid var(--mist);font-size:13.5px;flex-wrap:wrap;" class="rev d4">
+                <a href="https://github.com/Haytame37" target="_blank" rel="noopener" style="color:var(--graphite);text-decoration:none;font-weight:600;">💻 github.com/Haytame37</a>
+                <span style="color:var(--mist);">•</span>
+                <a href="https://www.linkedin.com/in/haytame-el-atraoui" target="_blank" rel="noopener" style="color:var(--onyx);text-decoration:none;font-weight:600;">💼 LinkedIn</a>
+                <span style="color:var(--mist);">•</span>
+                <span style="color:#2A5F2A;font-weight:600;" id="s6Mobility">Mobilité Flexible · Maroc &amp; International</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- BOTTOM NAV -->
+  <footer class="bnav"><nav class="ntabs" id="navTabsContainer"></nav></footer>
+
+</div>
+<script>
+const dict = {
+  fr: {
+    topbarSub:"Ingénieur Transformation Digitale Industrielle",
+    btnCvText:"CV PDF",
+    s1Badge:"Disponible — Stage PFE & Ingénieur · Mobilité Flexible",
+    s1BadgeRole:"● Ingénieur en Transformation Digitale",
+    s1Baseline:"Là où l'Industrie Rencontre le Logiciel.",
+    s1Desc:"Je transforme les défis industriels complexes en solutions logicielles scalables et robustes.",
+    s1PhoneLabel:"Téléphone",s1MailLabel:"Email",s1LocLabel:"Localisation",
+    s1LocVal:"Mohammédia, Maroc · Mobilité Flexible",s1CodeLabel:"GitHub",
+    s1DownloadBtn:"Télécharger le CV (PDF)",s1WhatsappBtn:"WhatsApp",
+    s1NextBtn:"Réalisations Safran",
+    pill1Title:"Génie Logiciel & Systèmes d'Entreprise",pill1Desc:"Python, Java/Spring Boot, Flutter — architectures résilientes.",
+    pill2Title:"Digitalisation Industrielle & SAP ERP",pill2Desc:"Automatisation de flux qualité, réduction des opérations manuelles.",
+    pill3Title:"IoT, Analytics & Optimisation",pill3Desc:"Capteurs MQTT/ESP32, tableaux de bord TRS/OEE, algorithmes VRP/TSP.",
+    s2Tag:"🛡️ Expérience Opérationnelle Validée",
+    s2Title:"Safran — Stage Digitalisation Industrielle & Qualité",
+    s2Desc:"Analyse, automatisation et fiabilisation des flux de données qualité sous SAP ERP, Excel et VBA (Août – Sept 2026).",
+    s2Card1Title:"Application Desktop Autonome Python & VBA",
+    s2Card1Desc:"Développement d'une application Python autonome assurant le parsing, le nettoyage et la consolidation automatique des fichiers Excel extraits de SAP ERP.",
+    s2M1:"Analyse et optimisation du workflow qualité sous SAP ERP.",
+    s2M2:"Développement d'une application Desktop autonome en Python pour les fichiers SAP.",
+    s2M3:"Conception de règles métiers paramétrables et modèles Excel/VBA réutilisables.",
+    s2M4:"Standardisation des livrables et suppression des ressaisies manuelles.",
+    s2ImpactTitle:"Impact & Fiabilité Opérationnelle",
+    s2Stat1Val:"4 500+",s2Stat1Title:"Dossiers validés sur jeux volumineux",
+    s2Stat1Desc:"Outil validé et mis en production pour une utilisation directe par les équipes opérationnelles.",
+    s2Stat2Val:"Standardisation & Fiabilité",s2Stat2Title:"Réduction Drastique des Erreurs",
+    s2Stat2Desc:"Automatisation rigoureuse des règles de gestion, éliminant les ressaisies manuelles à risque.",
+    s3Tag:"⚙️ Génie Logiciel & Recherche Opérationnelle",
+    s3Title:"Projets Concrets & Simulateur d'Optimisation",
+    s3Desc:"Applications connectées terrain (Flutter, Offline-First) et démonstrateur interactif d'optimisation de tournées (VRP/TSP).",
+    s3ZenithTitle:"Application Mobile Field-Service (Zenithsoft)",
+    s3ZenithDesc:"Application mobile cross-platform en Flutter avec persistance locale SQLite et synchronisation automatique avec une API REST.",
+    s3P1:"Gestion d'interventions hors réseau (Offline-first).",
+    s3P2:"Contrôle d'accès RBAC (technicien, manager, admin).",
+    s3P3:"Géolocalisation, signature électronique et reporting.",
+    s3VrpTitle:"Simulateur d'Optimisation VRP",s3VrpBtn:"Optimiser",s3DistLabel:"Distance :",
+    s4Tag:"📊 Compétences Techniques",s4Title:"Compétences Techniques & Spécialités Métier",
+    s4Desc:"Stack logicielle complète : développement full-stack, enterprise ERP, données industrielles et optimisation.",
+    s4Sk1Title:"Programming & Backend",s4Sk1Desc:"Projets : GMPP Suite (ERP Spring Boot/React), RIFQA (React/Firebase/Leaflet).",
+    s4Sk2Title:"Enterprise, ERP & Data",s4Sk2Desc:"Projets : Industrial OEE Analytics Dashboard, OptiStock Decision Support.",
+    s4Sk3Title:"Industry 4.0, IoT & DevOps",s4Sk3Desc:"Optimisation logistique, calcul TRS/OEE et micro-services industriels.",
+    s5Tag:"🎓 Education & Leadership",s5Title:"Parcours Académique & Activités de Leadership",
+    s5Desc:"Les 4 formations diplômantes exactes du CV, complétées par les responsabilités associatives.",
+    s5Deg1Period:"2024 – Présent (Promo 2026)",s5Deg1Title:"Diplôme d'Ingénieur — Transformation Digitale Industrielle",
+    s5Deg1School:"ENSA Béni Mellal · Université Sultan Moulay Slimane",
+    s5Deg1Desc:"Digitalisation industrielle, systèmes logiciels, cloud, IoT, automatisation, Industrie 4.0.",
+    s5Deg2Period:"2023 – 2024",s5Deg2Title:"Licence SMI — Bases de Données & Génie Logiciel",
+    s5Deg2School:"Faculté des Sciences Ben M'Sik · Université Hassan II",
+    s5Deg2Desc:"Bases de données, développement logiciel, traitement et analyse de données.",
+    s5Deg3Period:"2021 – 2023",s5Deg3Title:"DEUG — Sciences Mathématiques & Informatique",
+    s5Deg3School:"Université Hassan II de Casablanca",
+    s5Deg3Desc:"Fondements mathématiques, algèbre, analyse, probabilités et algorithmique.",
+    s5Deg4Period:"2021",s5Deg4Title:"Baccalauréat — Sciences Mathématiques A",
+    s5Deg4School:"Filière d'Excellence Scientifique · Maroc",
+    s5Deg4Desc:"Logique mathématique, abstraction et physique appliquée.",
+    s5Lead1Title:"🏆 Président — Club Industrie 4.0 & Organisateur Moroccan TSP Competition",
+    s5Lead1Desc:"ENSA Béni Mellal (2025–2026) · Événements nationaux d'optimisation logistique.",
+    s5Lead2Title:"🌐 Langues & Certifications Internationales",
+    s5Lead2Desc:"English — C1 (Certified Rosetta Stone) · French — B2 · Arabic — Native",
+    s6Title:"Échangeons sur vos Projets & Opportunités",
+    s6Desc:"Disponible pour Stage PFE & Opportunités d'Ingénieur. Double compétence Software Engineering & Performance Industrielle.",
+    s6BtnCall:"Appeler +212 696 547 432",s6BtnWhatsapp:"WhatsApp",s6BtnMail:"Email",
+    s6BtnCv:"CV (PDF)",s6Mobility:"Mobilité Flexible · Maroc & International",
+    tabs:['01. Profil & Coordonnées','02. Réalisation Safran','03. Projets & VRP Lab','04. Compétences IT/OT','05. Formation ENSA','06. Contact Direct'],
+    autoplayActive:"Actif",autoplayPaused:"En pause",
+    vrpOptLabel:"Gain : -39.7% km",vrpDefaultLabel:"Trajet non optimisé",
+    vrpOptBtn:"Réinitialiser",vrpDefaultBtn:"Optimiser"
+  },
+  en: {
+    topbarSub:"Industrial Digital Transformation Engineer",
+    btnCvText:"Download CV",
+    s1Badge:"Available — Final-Year Internship & Engineering Roles · Open Mobility",
+    s1BadgeRole:"● Digital Transformation Engineer",
+    s1Baseline:"Where Industry Meets Software.",
+    s1Desc:"I turn complex industrial problems into clean, scalable digital solutions.",
+    s1PhoneLabel:"Phone",s1MailLabel:"Email",s1LocLabel:"Location",
+    s1LocVal:"Mohammédia, Morocco · Open Mobility",s1CodeLabel:"GitHub",
+    s1DownloadBtn:"Download Official CV (PDF)",s1WhatsappBtn:"WhatsApp",
+    s1NextBtn:"Safran Achievements",
+    pill1Title:"Software Engineering & Enterprise Systems",pill1Desc:"Python, Java/Spring Boot, Flutter — resilient software architectures.",
+    pill2Title:"Industrial Digitalization & SAP ERP",pill2Desc:"Quality workflow automation, robust data pipelines, reduced manual tasks.",
+    pill3Title:"IoT, Analytics & Optimization",pill3Desc:"MQTT/ESP32 sensors, OEE dashboards, VRP/TSP algorithms.",
+    s2Tag:"🛡️ Verified Operational Experience",
+    s2Title:"Safran — Quality & Industrial Digitalization Intern",
+    s2Desc:"Analysis, automation, and reliability improvement of quality workflows involving SAP ERP, Excel and VBA (Aug – Sep 2026).",
+    s2Card1Title:"Standalone Desktop Python & VBA Solution",
+    s2Card1Desc:"Developed a standalone Python desktop application for automated processing of SAP-generated Excel files, with configurable VBA templates.",
+    s2M1:"Analyzed and improved an industrial quality data-processing workflow (SAP ERP, Excel, VBA).",
+    s2M2:"Developed a standalone Python desktop application for automated SAP Excel file processing.",
+    s2M3:"Designed configurable business rules and reusable Excel templates.",
+    s2M4:"Standardized recurring deliverables and eliminated high-risk manual re-entries.",
+    s2ImpactTitle:"Operational Impact & Reliability",
+    s2Stat1Val:"4,500+",s2Stat1Title:"Records Validated on Large Datasets",
+    s2Stat1Desc:"Solution validated and deployed into production for autonomous use by operational teams.",
+    s2Stat2Val:"Standardized & Robust",s2Stat2Title:"Drastic Error Reduction",
+    s2Stat2Desc:"Rigorous automation of business rules, removing high-risk manual re-entries.",
+    s3Tag:"⚙️ Software Engineering & Operations Research",
+    s3Title:"Hands-on Projects & Optimization Lab",
+    s3Desc:"Mobile field applications (Flutter, Offline-First) and interactive logistics routing demonstrator (VRP/TSP).",
+    s3ZenithTitle:"Mobile Field-Service Application (Zenithsoft)",
+    s3ZenithDesc:"Cross-platform mobile app in Flutter with Offline-first architecture (SQLite) and automatic REST API synchronization.",
+    s3P1:"Technician, manager, and admin workflows with RBAC.",
+    s3P2:"GPS geolocation, push notifications, and electronic signatures.",
+    s3P3:"Modular service structure and official production release builds.",
+    s3VrpTitle:"VRP Optimization Simulator",s3VrpBtn:"Optimize Route",s3DistLabel:"Total Distance:",
+    s4Tag:"📊 Technical Skills",s4Title:"Technical Skills & Domain Specializations",
+    s4Desc:"Comprehensive software stack: full-stack, enterprise ERP, industrial data, and optimization.",
+    s4Sk1Title:"Programming & Backend",s4Sk1Desc:"Key projects: GMPP Suite (Java/Spring Boot + React), RIFQA (React/Firebase/Leaflet).",
+    s4Sk2Title:"Enterprise, ERP & Data",s4Sk2Desc:"Key projects: Industrial OEE Analytics Dashboard, OptiStock Decision Support.",
+    s4Sk3Title:"Industry 4.0, IoT & DevOps",s4Sk3Desc:"Logistics optimization, OEE analytics, and industrial micro-services.",
+    s5Tag:"🎓 Education & Leadership",s5Title:"Academic Background & Leadership Activities",
+    s5Desc:"Exact 4 degree programs from the official CV, complemented by student leadership and certifications.",
+    s5Deg1Period:"2024 – Present (Class of 2026)",s5Deg1Title:"Engineering Degree — Industrial Digital Transformation",
+    s5Deg1School:"ENSA Béni Mellal · Sultan Moulay Slimane University",
+    s5Deg1Desc:"Industrial digitalization, software systems, cloud, IoT, automation, Industry 4.0.",
+    s5Deg2Period:"2023 – 2024",s5Deg2Title:"Bachelor's Degree — Computer Science, Database Engineering",
+    s5Deg2School:"Faculty of Sciences Ben M'Sik · Hassan II University",
+    s5Deg2Desc:"Database architectures, software engineering, data processing, enterprise systems.",
+    s5Deg3Period:"2021 – 2023",s5Deg3Title:"DEUG — Mathematical & Computer Sciences",
+    s5Deg3School:"Hassan II University of Casablanca",
+    s5Deg3Desc:"Linear algebra, calculus, discrete math, and fundamental data structures.",
+    s5Deg4Period:"2021",s5Deg4Title:"Baccalaureate — Mathematics Sciences A",
+    s5Deg4School:"Scientific Excellence Track · Morocco",
+    s5Deg4Desc:"Formal logic, rigorous problem solving, and applied physics.",
+    s5Lead1Title:"🏆 President — Club Industrie 4.0 & Organizer Moroccan TSP Competition",
+    s5Lead1Desc:"ENSA Béni Mellal (2025–2026) · Coordinated national logistics optimization challenges.",
+    s5Lead2Title:"🌐 Languages & International Certifications",
+    s5Lead2Desc:"English — C1 Certified (Rosetta Stone) · French — B2 · Arabic — Native",
+    s6Title:"Let's Connect & Discuss Your Engineering Challenges",
+    s6Desc:"Available for Final-Year Internship (PFE) & Full-Time Engineering Roles. Software + Industrial efficiency synergy.",
+    s6BtnCall:"Call +212 696 547 432",s6BtnWhatsapp:"WhatsApp",s6BtnMail:"Email",
+    s6BtnCv:"Download CV (PDF)",s6Mobility:"Open Mobility: Morocco & International",
+    tabs:['01. Profile & Contact','02. Safran Experience','03. Projects & VRP Lab','04. Technical Skills','05. Academic Pathway','06. Direct Contact'],
+    autoplayActive:"Active",autoplayPaused:"Paused",
+    vrpOptLabel:"Saved: -39.7%",vrpDefaultLabel:"Unoptimized Route",
+    vrpOptBtn:"Reset",vrpDefaultBtn:"Optimize Route"
+  }
+};
+
+let lang='fr',cur=0,isAP=true,timer=null;
+const TOTAL=6,DUR=7500;
+const track=document.getElementById('sliderTrack');
+const pbar=document.getElementById('progressBar');
+const ctr=document.getElementById('slideCounter');
+const apBtn=document.getElementById('btnAutoplay');
+const apIcon=document.getElementById('autoplayIcon');
+const apText=document.getElementById('autoplayText');
+const tabs=document.getElementById('navTabsContainer');
+
+function applyLang(l){
+  lang=l;const c=dict[l];
+  document.getElementById('tagFR').className=l==='fr'?'lang-on':'lang-off';
+  document.getElementById('tagEN').className=l==='en'?'lang-on':'lang-off';
+  for(const[k,v]of Object.entries(c)){
+    if(['tabs','autoplayActive','autoplayPaused','vrpOptLabel','vrpDefaultLabel','vrpOptBtn','vrpDefaultBtn'].includes(k))continue;
+    const el=document.getElementById(k);
+    if(el)el.textContent=v;
+  }
+  apText.textContent=isAP?c.autoplayActive:c.autoplayPaused;
+  buildTabs();
+}
+
+document.getElementById('btnLangToggle').addEventListener('click',()=>applyLang(lang==='fr'?'en':'fr'));
+
+function buildTabs(){
+  tabs.innerHTML='';
+  dict[lang].tabs.forEach((lbl,i)=>{
+    const b=document.createElement('button');
+    b.className='ntab'+(i===cur?' active':'');
+    b.innerHTML=`<span class="ntnum">0${i+1}</span><span>${lbl.split('. ')[1]}</span>`;
+    b.addEventListener('click',()=>goToSlide(i));
+    tabs.appendChild(b);
+  });
+}
+
+function resetProg(){
+  pbar.classList.remove('running');
+  void pbar.offsetWidth;
+  if(isAP)pbar.classList.add('running');
+}
+
+function trigReveal(idx){
+  const s=document.querySelector(`[data-slide="${idx}"]`);
+  if(!s)return;
+  s.querySelectorAll('.rev').forEach(el=>{
+    el.classList.remove('on');
+    requestAnimationFrame(()=>requestAnimationFrame(()=>el.classList.add('on')));
+  });
+}
+
+function updateView(){
+  track.style.transform=`translateX(-${cur*100}%)`;
+  ctr.textContent=`0${cur+1} / 0${TOTAL}`;
+  resetProg();
+  tabs.querySelectorAll('.ntab').forEach((t,i)=>t.classList.toggle('active',i===cur));
+  if(isAP){clearTimeout(timer);timer=setTimeout(nextSlide,DUR);}
+  setTimeout(()=>trigReveal(cur),80);
+  if(cur===1&&!counterDone)animCounter();
+}
+
+function goToSlide(i){cur=(i+TOTAL)%TOTAL;updateView();}
+function nextSlide(){goToSlide(cur+1);}
+function prevSlide(){goToSlide(cur-1);}
+
+document.getElementById('btnNext').addEventListener('click',nextSlide);
+document.getElementById('btnPrev').addEventListener('click',prevSlide);
+document.getElementById('arrowNext').addEventListener('click',nextSlide);
+document.getElementById('arrowPrev').addEventListener('click',prevSlide);
+
+apBtn.addEventListener('click',()=>{
+  isAP=!isAP;const c=dict[lang];
+  if(isAP){apBtn.classList.add('active');apIcon.textContent='⏸';apText.textContent=c.autoplayActive;pbar.classList.add('running');pbar.classList.remove('paused');timer=setTimeout(nextSlide,DUR);}
+  else{apBtn.classList.remove('active');apIcon.textContent='▶';apText.textContent=c.autoplayPaused;pbar.classList.remove('running');pbar.classList.add('paused');clearTimeout(timer);}
+});
+
+window.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight')nextSlide();
+  if(e.key==='ArrowLeft')prevSlide();
+  if(e.key===' '){e.preventDefault();apBtn.click();}
+});
+
+let tx=null;
+document.getElementById('sliderViewport').addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
+document.getElementById('sliderViewport').addEventListener('touchend',e=>{
+  if(tx===null)return;
+  const d=tx-e.changedTouches[0].clientX;
+  if(d>50)nextSlide();else if(d<-50)prevSlide();
+  tx=null;
+},{passive:true});
+
+/* Mouse tracking glow */
+document.addEventListener('mousemove',e=>{
+  document.querySelectorAll('.card,.hero-card').forEach(card=>{
+    const r=card.getBoundingClientRect();
+    card.style.setProperty('--mx',(e.clientX-r.left)+'px');
+    card.style.setProperty('--my',(e.clientY-r.top)+'px');
+  });
+});
+
+/* VRP demo */
+let vrpOpt=false;
+const vrpPath=document.getElementById('vrpPath');
+const vrpDist=document.getElementById('vrpDistVal');
+const vrpGainEl=document.getElementById('vrpGain');
+const vrpBtnEl=document.getElementById('s3VrpBtn');
+const vrpToggle=document.getElementById('btnToggleVrp');
+
+vrpToggle.addEventListener('click',()=>{
+  vrpOpt=!vrpOpt;const c=dict[lang];
+  if(vrpOpt){
+    vrpPath.setAttribute('d','M 200 110 L 90 60 L 310 60 L 290 170 L 80 170 Z');
+    vrpPath.setAttribute('stroke','#1D1D1F');vrpPath.setAttribute('stroke-width','2.5');
+    vrpPath.setAttribute('stroke-dasharray','6 3');
+    vrpDist.textContent='410 km';vrpGainEl.textContent=c.vrpOptLabel;
+    vrpGainEl.style.color='#2A5F2A';vrpBtnEl.textContent=c.vrpOptBtn;
+    vrpToggle.className='vrp-btn opt';
+  }else{
+    vrpPath.setAttribute('d','M 200 110 L 290 170 L 90 60 L 80 170 L 310 60 Z');
+    vrpPath.setAttribute('stroke','#CCCCCC');vrpPath.setAttribute('stroke-width','2');
+    vrpPath.removeAttribute('stroke-dasharray');
+    vrpDist.textContent='680 km';vrpGainEl.textContent=c.vrpDefaultLabel;
+    vrpGainEl.style.color='var(--silver)';vrpBtnEl.textContent=c.vrpDefaultBtn;
+    vrpToggle.className='vrp-btn';
+  }
+});
+
+/* Animated counter */
+let counterDone=false;
+function animCounter(){
+  counterDone=true;
+  const el=document.getElementById('s2Stat1Val');
+  if(!el)return;
+  const target=4500;const suffix=lang==='fr'?' 500+':',500+';
+  let start=null;
+  const step=ts=>{
+    if(!start)start=ts;
+    const p=Math.min((ts-start)/1200,1);
+    const ease=1-Math.pow(1-p,3);
+    const v=Math.floor(ease*target);
+    el.textContent=lang==='fr'?v.toLocaleString('fr-FR')+'+':v.toLocaleString('en-US')+'+';
+    if(p<1)requestAnimationFrame(step);
+    else el.textContent=lang==='fr'?'4 500+':'4,500+';
+  };
+  requestAnimationFrame(step);
+}
+
+/* INIT */
+applyLang('fr');
+buildTabs();
+trigReveal(0);
+timer=setTimeout(nextSlide,DUR);
+</script>
+</body>
 </html>
