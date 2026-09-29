@@ -33,5 +33,5 @@ Each module reproduces the logic of a real project from the CV, using synthetic 
 ## Editing
 
 - **Text:** every visible string exists twice in `index.html`, as `<span data-l="en">` and `<span data-l="fr">`. Update both.
-- **CV:** replace the PDF and keep the same file name, so existing links keep working.
+- **CV:** the PDF is generated from `C:\CV\Recrutement\CV_source\cv_2027_en.html` with `py build_cv.py`. Copy the result here under the same file name, then bump the `?v=` query on the download links in `index.html`.
 - **Local preview:** run `python -m http.server` in this folder, then open http://localhost:8000.
