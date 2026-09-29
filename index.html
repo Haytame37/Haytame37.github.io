@@ -1,18 +1,554 @@
 <!doctype html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Haytame EL ATRAOUI — Industrial Digital Transformation & Cybersecurity Engineer | Cloud & AI</title>
-    <meta name="description" content="Portfolio de Haytame EL ATRAOUI — Ingénieur en Transformation Digitale Industrielle & Cybersécurité | Cloud & DevSecOps | Industrial IoT." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230284c7'/><text x='50' y='65' font-size='46' font-family='sans-serif' font-weight='800' fill='white' text-anchor='middle'>HE</text></svg>" />
-    <script type="module" crossorigin src="/assets/index-C17UZ-kB.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DIWgfkVU.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Haytame El Atraoui — Industrial Digital Transformation Engineer</title>
+  <meta name="description" content="Haytame El Atraoui — Industrial Digital Transformation engineering student (ENSA Beni Mellal). Software, ERP/SAP, cloud, cyber risk and Industrial IoT. Available for a final-year internship (PFE) from February 2027." />
+  <meta name="author" content="Haytame El Atraoui" />
+  <meta name="theme-color" content="#0E1A2B" />
+  <link rel="canonical" href="https://haytame37.github.io/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://haytame37.github.io/" />
+  <meta property="og:title" content="Haytame El Atraoui — Industrial Digital Transformation Engineer" />
+  <meta property="og:description" content="Software, ERP, cloud, cyber risk & Industrial IoT. PFE 2027 — available from February 2027." />
+  <meta property="og:image" content="https://haytame37.github.io/assets/img/og-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="assets/img/portrait.webp" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Haytame El Atraoui",
+    "jobTitle": "Industrial Digital Transformation Engineering Student",
+    "url": "https://haytame37.github.io/",
+    "image": "https://haytame37.github.io/assets/img/og-cover.jpg",
+    "email": "mailto:haytameelatraoui@gmail.com",
+    "alumniOf": ["ENSA Beni Mellal", "Faculty of Sciences Ben M'Sik — Hassan II University of Casablanca"],
+    "sameAs": ["https://www.linkedin.com/in/haytame-el-atraoui", "https://github.com/Haytame37"]
+  }
+  </script>
+  <script>
+    // Apply saved/auto language before paint to avoid flicker
+    (function () {
+      var l = null;
+      try { l = localStorage.getItem('he-lang'); } catch (e) {}
+      if (!l) l = (navigator.language || 'en').toLowerCase().indexOf('fr') === 0 ? 'fr' : 'en';
+      document.documentElement.lang = l;
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner wrap">
+      <a href="#top" class="brand" aria-label="Haytame El Atraoui — home">
+        <span class="brand__mark">HE</span>
+        <span class="brand__name">Haytame El Atraoui</span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#profile"><span data-l="en">Profile</span><span data-l="fr">Profil</span></a>
+        <a href="#experience"><span data-l="en">Experience</span><span data-l="fr">Expérience</span></a>
+        <a href="#lab">Lab</a>
+        <a href="#projects"><span data-l="en">Projects</span><span data-l="fr">Projets</span></a>
+        <a href="#stage"><span data-l="en">Leadership</span><span data-l="fr">Leadership</span></a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav__tools">
+        <button class="lang" id="langToggle" type="button" aria-label="Switch language">
+          <span class="lang__opt" data-v="en">EN</span><span class="lang__sep">/</span><span class="lang__opt" data-v="fr">FR</span>
+        </button>
+        <a class="btn btn--ink btn--sm" href="Haytame_El_Atraoui_CV_PORTFOLIO_2027_EN.pdf" download>
+          CV <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg>
+        </a>
+        <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="wrap hero__inner">
+        <div class="hero__copy">
+          <p class="status reveal">
+            <span class="status__dot"></span>
+            <span data-l="en">Open to a final-year internship (PFE) — from February 2027</span>
+            <span data-l="fr">Disponible pour un stage PFE — à partir de février 2027</span>
+          </p>
+
+          <h1 class="hero__name reveal">
+            <span class="line">Haytame</span>
+            <span class="line">El Atraoui<span class="dot">.</span></span>
+          </h1>
+
+          <p class="hero__role reveal">
+            <span data-l="en">Industrial Digital Transformation Engineer — building the bridge between <em>software</em> and the <em>factory floor</em>.</span>
+            <span data-l="fr">Ingénieur en Transformation Digitale Industrielle — je construis le pont entre le <em>logiciel</em> et le <em>terrain industriel</em>.</span>
+          </p>
+
+          <p class="hero__lead reveal">
+            <span data-l="en">I design reliable digital solutions for real operational needs: enterprise systems, APIs, cloud, data, automation and cyber risk — tested in environments like Safran, COSUMAR and Zenithsoft.</span>
+            <span data-l="fr">Je conçois des solutions digitales fiables pour de vrais besoins opérationnels : systèmes d'entreprise, API, cloud, data, automatisation et risque cyber — éprouvées chez Safran, COSUMAR et Zenithsoft.</span>
+          </p>
+
+          <div class="hero__cta reveal">
+            <a class="btn btn--signal" href="#lab">
+              <span data-l="en">Explore the Lab</span><span data-l="fr">Explorer le Lab</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m0 0l-6-6m6 6l-6 6"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#contact">
+              <span data-l="en">Get in touch</span><span data-l="fr">Me contacter</span>
+            </a>
+          </div>
+
+          <dl class="hero__facts reveal">
+            <div><dt><span data-l="en">Base</span><span data-l="fr">Base</span></dt><dd><span data-l="en">Morocco · open to mobility</span><span data-l="fr">Maroc · mobile</span></dd></div>
+            <div><dt><span data-l="en">School</span><span data-l="fr">École</span></dt><dd>ENSA Beni Mellal</dd></div>
+            <div><dt><span data-l="en">Languages</span><span data-l="fr">Langues</span></dt><dd>AR · EN C1 · FR B2</dd></div>
+          </dl>
+        </div>
+
+        <figure class="hero__visual reveal" aria-label="Portrait">
+          <div class="plate">
+            <div class="plate__grid" aria-hidden="true"></div>
+            <span class="plate__code" aria-hidden="true">HE—2027 / REV.03</span>
+            <span class="plate__bar" aria-hidden="true"></span>
+            <svg class="plate__ring" viewBox="0 0 200 200" aria-hidden="true">
+              <circle cx="100" cy="100" r="96" />
+              <circle cx="100" cy="100" r="70" />
+            </svg>
+          </div>
+          <img class="portrait" src="assets/img/portrait.webp" width="862" height="1100" alt="Haytame El Atraoui, portrait" fetchpriority="high" />
+
+          <div class="tag tag--a">
+            <span class="tag__k">SAFRAN · QUALITY</span>
+            <span class="tag__v"><b data-count="4500">4,500</b>+ <span data-l="en">SAP records validated</span><span data-l="fr">enregistrements SAP validés</span></span>
+          </div>
+          <div class="tag tag--b">
+            <span class="tag__k">STACK</span>
+            <span class="tag__v">Python · Spring · SAP · Azure</span>
+          </div>
+        </figure>
+      </div>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker__track">
+          <span>Python</span><i>/</i><span>Java · Spring Boot</span><i>/</i><span>FastAPI</span><i>/</i><span>SAP ERP</span><i>/</i><span>Excel · VBA</span><i>/</i><span>n8n</span><i>/</i><span>Azure IaaS</span><i>/</i><span>Docker Compose</span><i>/</i><span>PostgreSQL</span><i>/</i><span>Power BI</span><i>/</i><span>ISO 27001 · 27005</span><i>/</i><span>MQTT · IIoT</span><i>/</i><span>Flutter</span><i>/</i><span>React</span><i>/</i>
+          <span>Python</span><i>/</i><span>Java · Spring Boot</span><i>/</i><span>FastAPI</span><i>/</i><span>SAP ERP</span><i>/</i><span>Excel · VBA</span><i>/</i><span>n8n</span><i>/</i><span>Azure IaaS</span><i>/</i><span>Docker Compose</span><i>/</i><span>PostgreSQL</span><i>/</i><span>Power BI</span><i>/</i><span>ISO 27001 · 27005</span><i>/</i><span>MQTT · IIoT</span><i>/</i><span>Flutter</span><i>/</i><span>React</span><i>/</i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROOF BAR ============ -->
+    <section class="proof wrap" aria-label="Key figures">
+      <div class="proof__item reveal"><b><span data-count="4500">4,500</span>+</b><span data-l="en">SAP records processed &amp; validated by my Python tool at Safran</span><span data-l="fr">enregistrements SAP traités et validés par mon outil Python chez Safran</span></div>
+      <div class="proof__item reveal"><b data-count="4">4</b><span data-l="en">industrial &amp; software engineering experiences</span><span data-l="fr">expériences en ingénierie industrielle et logicielle</span></div>
+      <div class="proof__item reveal"><b data-count="6">6</b><span data-l="en">engineering projects, from ERP to IIoT</span><span data-l="fr">projets d'ingénierie, de l'ERP à l'IIoT</span></div>
+      <div class="proof__item reveal"><b>C1</b><span data-l="en">English — worked in a 7-member international team</span><span data-l="fr">Anglais — équipe internationale de 7 membres</span></div>
+    </section>
+
+    <!-- ============ PROFILE ============ -->
+    <section class="section" id="profile">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-num">01</span>
+          <h2><span data-l="en">Two worlds, <em>one engineer</em>.</span><span data-l="fr">Deux mondes, <em>un ingénieur</em>.</span></h2>
+        </header>
+
+        <div class="profile">
+          <figure class="profile__photo reveal">
+            <img src="assets/img/about.webp" width="880" height="1100" loading="lazy" alt="Haytame El Atraoui in front of an industrial building" />
+            <figcaption><span class="mono">FIG. 01</span> <span data-l="en">On site — where systems meet operations.</span><span data-l="fr">Sur site — là où les systèmes rencontrent les opérations.</span></figcaption>
+          </figure>
+
+          <div class="profile__body">
+            <p class="lede reveal">
+              <span data-l="en">Most engineers pick a side: <em>code</em> or <em>plant</em>. I was trained in both — a Computer Science &amp; Database Engineering foundation, now an engineering degree in Industrial Digital Transformation. My work sits where ERP data, software architecture and shop-floor reality have to agree.</span>
+              <span data-l="fr">La plupart des ingénieurs choisissent un camp : le <em>code</em> ou l'<em>usine</em>. J'ai été formé aux deux — un socle en Informatique &amp; Ingénierie des Bases de Données, puis un cycle ingénieur en Transformation Digitale Industrielle. Mon travail se situe là où les données ERP, l'architecture logicielle et la réalité du terrain doivent s'accorder.</span>
+            </p>
+
+            <div class="bridge reveal" aria-label="Capability map">
+              <div class="bridge__col">
+                <h3 class="mono">IT &amp; SOFTWARE</h3>
+                <ul>
+                  <li><b>Software &amp; APIs</b><span>Python · Java/Spring Boot · FastAPI · REST · JWT</span></li>
+                  <li><b>Cloud &amp; Data</b><span>Azure IaaS · Docker/Compose · Linux · SQL · PL/SQL · Power BI</span></li>
+                </ul>
+              </div>
+              <div class="bridge__link" aria-hidden="true">
+                <svg viewBox="0 0 60 200" preserveAspectRatio="none"><path d="M30 0 V200" /></svg>
+              </div>
+              <div class="bridge__col">
+                <h3 class="mono">INDUSTRY &amp; OPERATIONS</h3>
+                <ul>
+                  <li><b>Enterprise &amp; Automation</b><span>SAP ERP · Excel/VBA · n8n · Jira · Apps Script</span></li>
+                  <li><b>Cyber &amp; Industry</b><span>ISO 27001/27005 · Nmap · Wireshark · IIoT · MQTT</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="principles">
+              <div class="principle reveal">
+                <span class="mono">P.01</span>
+                <h4><span data-l="en">Start from the process</span><span data-l="fr">Partir du processus</span></h4>
+                <p><span data-l="en">Map the real workflow and business rules before writing a line of code.</span><span data-l="fr">Cartographier le vrai flux et les règles métier avant d'écrire une ligne de code.</span></p>
+              </div>
+              <div class="principle reveal">
+                <span class="mono">P.02</span>
+                <h4><span data-l="en">Make data trustworthy</span><span data-l="fr">Fiabiliser la donnée</span></h4>
+                <p><span data-l="en">Traceability, validation and consistency come first — dashboards come after.</span><span data-l="fr">Traçabilité, validation et cohérence d'abord — les tableaux de bord ensuite.</span></p>
+              </div>
+              <div class="principle reveal">
+                <span class="mono">P.03</span>
+                <h4><span data-l="en">Secure by design</span><span data-l="fr">Sécurisé dès la conception</span></h4>
+                <p><span data-l="en">Risk is assessed, scored and turned into tracked actions — not left in a report.</span><span data-l="fr">Le risque est évalué, scoré et transformé en actions suivies — pas laissé dans un rapport.</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section section--alt" id="experience">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-num">02</span>
+          <h2><span data-l="en">Field <em>experience</em>.</span><span data-l="fr">Expérience <em>terrain</em>.</span></h2>
+        </header>
+
+        <ol class="ledger">
+          <li class="entry reveal">
+            <div class="entry__meta">
+              <span class="mono">AUG — SEP 2026</span>
+              <span class="entry__place">Nouaceur, Morocco</span>
+            </div>
+            <div class="entry__main">
+              <h3>Safran <span class="entry__dept">— Quality Department</span></h3>
+              <p class="entry__role"><span data-l="en">Quality &amp; Industrial Digitalization Intern</span><span data-l="fr">Stagiaire Qualité &amp; Digitalisation Industrielle</span></p>
+              <ul>
+                <li><span data-l="en">Mapped a quality workflow across SAP ERP, Excel and VBA, translating business rules and manual steps into an automation approach.</span><span data-l="fr">Cartographie d'un flux qualité entre SAP ERP, Excel et VBA, traduisant règles métier et étapes manuelles en démarche d'automatisation.</span></li>
+                <li><span data-l="en">Built a standalone Python tool that processes SAP exports and generates standardized AD/SB outputs — validated on <b>4,500+ records</b>, with configurable rules and documentation.</span><span data-l="fr">Développement d'un outil Python autonome traitant les exports SAP et générant des sorties AD/SB standardisées — validé sur <b>4 500+ enregistrements</b>, avec règles configurables et documentation.</span></li>
+              </ul>
+              <div class="chips"><span>SAP ERP</span><span>Python</span><span>VBA</span><span>Excel</span><span>Process mapping</span></div>
+            </div>
+          </li>
+
+          <li class="entry reveal">
+            <div class="entry__meta">
+              <span class="mono">JUN — JUL 2026</span>
+              <span class="entry__place">Rabat · Remote</span>
+            </div>
+            <div class="entry__main">
+              <h3>Zenithsoft</h3>
+              <p class="entry__role"><span data-l="en">Mobile Software Engineering Intern</span><span data-l="fr">Stagiaire Ingénierie Logicielle Mobile</span></p>
+              <ul>
+                <li><span data-l="en">Built an offline-first Flutter field-service app: SQLite, REST synchronization, JWT, geolocation, notifications, signatures and reporting.</span><span data-l="fr">Application Flutter terrain « offline-first » : SQLite, synchronisation REST, JWT, géolocalisation, notifications, signatures et rapports.</span></li>
+                <li><span data-l="en">Delivered in Scrum/Kanban sprints with Git, focusing on data consistency and API integration.</span><span data-l="fr">Livraison en sprints Scrum/Kanban avec Git, centrée sur la cohérence des données et l'intégration d'API.</span></li>
+              </ul>
+              <div class="chips"><span>Flutter</span><span>SQLite</span><span>REST</span><span>JWT</span><span>Scrum</span></div>
+            </div>
+          </li>
+
+          <li class="entry reveal">
+            <div class="entry__meta">
+              <span class="mono">SEP 2025</span>
+              <span class="entry__place">Morocco</span>
+            </div>
+            <div class="entry__main">
+              <h3>COSUMAR</h3>
+              <p class="entry__role"><span data-l="en">Industrial Methods &amp; Operations Intern</span><span data-l="fr">Stagiaire Méthodes &amp; Opérations Industrielles</span></p>
+              <ul>
+                <li><span data-l="en">Observed production, maintenance/CMMS and operational data flows, focusing on traceability, KPI reporting, information reliability and digitalization opportunities.</span><span data-l="fr">Analyse des flux de production, de maintenance/GMAO et des données opérationnelles : traçabilité, reporting KPI, fiabilité de l'information et opportunités de digitalisation.</span></li>
+              </ul>
+              <div class="chips"><span>GMAO / CMMS</span><span>KPI</span><span>Traceability</span></div>
+            </div>
+          </li>
+
+          <li class="entry reveal">
+            <div class="entry__meta">
+              <span class="mono">FEB — JUN 2024</span>
+              <span class="entry__place">Mohammedia, Morocco</span>
+            </div>
+            <div class="entry__main">
+              <h3>École Kobaa</h3>
+              <p class="entry__role"><span data-l="en">Full-Stack Web Developer — Final-Year Project</span><span data-l="fr">Développeur Web Full-Stack — Projet de fin d'études</span></p>
+              <ul>
+                <li><span data-l="en">Co-developed a multi-role school-management application, from requirements and workflow design to implementation, with normalized MySQL modeling.</span><span data-l="fr">Co-développement d'une application de gestion scolaire multi-rôles, du recueil des besoins à l'implémentation, avec modélisation MySQL normalisée.</span></li>
+              </ul>
+              <div class="chips"><span>MySQL</span><span>Web</span><span>UML</span></div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ LAB ============ -->
+    <section class="lab" id="lab">
+      <div class="wrap">
+        <header class="sec-head sec-head--dark reveal">
+          <span class="sec-num">03</span>
+          <h2><span data-l="en">The Lab — <em>working models</em> of what I build.</span><span data-l="fr">Le Lab — des <em>modèles fonctionnels</em> de ce que je construis.</span></h2>
+          <p class="sec-sub"><span data-l="en">Six interactive simulations, one per domain. Each one reproduces the logic of a real project — play with it.</span><span data-l="fr">Six simulations interactives, une par domaine. Chacune reproduit la logique d'un vrai projet — manipulez-les.</span></p>
+        </header>
+
+        <div class="console reveal">
+          <div class="console__bar">
+            <span class="lights"><i></i><i></i><i></i></span>
+            <span class="console__path mono" id="labPath">haytame@lab:~/modules/risk-engine</span>
+            <span class="console__live mono"><i></i>LIVE</span>
+          </div>
+          <div class="console__body">
+            <div class="modules" role="tablist" aria-label="Lab modules">
+              <button class="module is-active" role="tab" data-mod="risk" aria-selected="true">
+                <span class="module__n mono">01</span>
+                <span class="module__t">Cyber Risk Engine</span>
+                <span class="module__d mono">ISO 27005 → Jira</span>
+              </button>
+              <button class="module" role="tab" data-mod="sap" aria-selected="false">
+                <span class="module__n mono">02</span>
+                <span class="module__t">SAP Data Pipeline</span>
+                <span class="module__d mono">ERP · Python</span>
+              </button>
+              <button class="module" role="tab" data-mod="iot" aria-selected="false">
+                <span class="module__n mono">03</span>
+                <span class="module__t">Machine Alerting</span>
+                <span class="module__d mono">IIoT · n8n</span>
+              </button>
+              <button class="module" role="tab" data-mod="cloud" aria-selected="false">
+                <span class="module__n mono">04</span>
+                <span class="module__t">Container Stack</span>
+                <span class="module__d mono">Docker · Cloud</span>
+              </button>
+              <button class="module" role="tab" data-mod="api" aria-selected="false">
+                <span class="module__n mono">05</span>
+                <span class="module__t">Secure REST API</span>
+                <span class="module__d mono">JWT · RBAC</span>
+              </button>
+              <button class="module" role="tab" data-mod="opt" aria-selected="false">
+                <span class="module__n mono">06</span>
+                <span class="module__t">Warehouse Optimizer</span>
+                <span class="module__d mono">OR · Logistics</span>
+              </button>
+            </div>
+            <div class="stage" id="labStage" role="tabpanel" aria-live="polite"></div>
+          </div>
+        </div>
+        <p class="lab__note mono"><span data-l="en">// All data in the Lab is synthetic. Simulations illustrate the approach — no client data is exposed.</span><span data-l="fr">// Toutes les données du Lab sont fictives. Les simulations illustrent la démarche — aucune donnée client n'est exposée.</span></p>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-num">04</span>
+          <h2><span data-l="en">Selected <em>engineering</em> projects.</span><span data-l="fr">Projets d'<em>ingénierie</em> sélectionnés.</span></h2>
+        </header>
+
+        <article class="feature reveal">
+          <div class="feature__label mono"><span data-l="en">Featured project</span><span data-l="fr">Projet phare</span></div>
+          <div class="feature__grid">
+            <div>
+              <h3>Cyber Risk Management Automation</h3>
+              <p class="feature__stack mono">Jira · Google Sheets · Apps Script · REST API · ISO 27001/27005</p>
+              <ul class="ticks">
+                <li><span data-l="en">Risk register covering asset, threat, vulnerability, likelihood, impact, score, treatment, owner and status — with critical-risk prioritization.</span><span data-l="fr">Registre des risques : actif, menace, vulnérabilité, vraisemblance, impact, score, traitement, responsable et statut — avec priorisation des risques critiques.</span></li>
+                <li><span data-l="en">Automated Jira remediation tickets for critical risks via Apps Script + REST API, with Jira-key traceability and duplicate prevention.</span><span data-l="fr">Création automatique de tickets Jira de remédiation pour les risques critiques via Apps Script + API REST, avec traçabilité par clé Jira et anti-doublons.</span></li>
+                <li><span data-l="en">KPI/KRI dashboard tracking critical risks, treatment plans and remediation status.</span><span data-l="fr">Tableau de bord KPI/KRI : risques critiques, plans de traitement et statut de remédiation.</span></li>
+              </ul>
+              <a class="link-arrow" href="#lab" data-open="risk"><span data-l="en">Try it in the Lab</span><span data-l="fr">L'essayer dans le Lab</span> →</a>
+            </div>
+            <div class="feature__viz" aria-hidden="true">
+              <div class="mini-matrix" id="miniMatrix"></div>
+              <div class="flow mono">
+                <span>Register</span><i></i><span>Score</span><i></i><span>Prioritize</span><i></i><span class="hot">SEC-ticket</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card__top"><span class="mono">ACADEMIC</span><span class="card__idx mono">P—02</span></div>
+            <h3>GMPP — Industrial Maintenance Platform</h3>
+            <p><span data-l="en">Enterprise-oriented maintenance platform: equipment, interventions, inventory, reporting, roles/RBAC and REST workflows in a containerized architecture.</span><span data-l="fr">Plateforme de maintenance orientée entreprise : équipements, interventions, stock, reporting, rôles/RBAC et workflows REST dans une architecture conteneurisée.</span></p>
+            <div class="chips"><span>Java</span><span>Spring Boot</span><span>PostgreSQL</span><span>React</span><span>Docker</span></div>
+            <a class="link-arrow" href="#lab" data-open="api"><span data-l="en">See the API model</span><span data-l="fr">Voir le modèle d'API</span> →</a>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__top"><span class="mono">ACADEMIC</span><span class="card__idx mono">P—03</span></div>
+            <h3>OptiStock v2.0 — Warehouse Decision Support</h3>
+            <p><span data-l="en">Full-stack platform for warehouse location/logistics optimization and temperature/humidity monitoring. My role: full-stack architecture and UI/UX.</span><span data-l="fr">Plateforme full-stack d'optimisation des emplacements et de la logistique d'entrepôt, avec suivi température/humidité. Mon rôle : architecture full-stack et UI/UX.</span></p>
+            <div class="chips"><span>Next.js</span><span>FastAPI</span><span>Python</span><span>OR-Tools</span><span>IoT</span></div>
+            <a class="link-arrow" href="#lab" data-open="opt"><span data-l="en">Run the optimizer</span><span data-l="fr">Lancer l'optimiseur</span> →</a>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__top"><span class="mono">PERSONAL</span><span class="card__idx mono">P—04</span></div>
+            <h3>Critical Machine Alert Automation</h3>
+            <p><span data-l="en">Scheduled workflow that normalizes machine data, evaluates critical thresholds, sends email alerts, logs non-critical states and handles failures.</span><span data-l="fr">Workflow planifié qui normalise les données machines, évalue les seuils critiques, envoie des alertes e-mail, journalise les états non critiques et gère les échecs.</span></p>
+            <div class="chips"><span>n8n</span><span>REST API</span><span>MongoDB</span><span>SMTP</span></div>
+            <a class="link-arrow" href="#lab" data-open="iot"><span data-l="en">Watch it live</span><span data-l="fr">Le voir en direct</span> →</a>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__top"><span class="mono">INTERNATIONAL · JUL 2026</span><span class="card__idx mono">P—05</span></div>
+            <h3>RIFQA — Real-Time Group Navigation &amp; Safety</h3>
+            <p><span data-l="en">UH2C / ENSEM Casablanca. Real-time synchronization, geolocation and pedestrian routing, built in a 7-member English-speaking team.</span><span data-l="fr">UH2C / ENSEM Casablanca. Synchronisation temps réel, géolocalisation et itinéraires piétons, au sein d'une équipe anglophone de 7 membres.</span></p>
+            <div class="chips"><span>React</span><span>Firebase</span><span>Leaflet</span></div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__top"><span class="mono">INTERNSHIP</span><span class="card__idx mono">P—06</span></div>
+            <h3>Offline-first Field-Service App</h3>
+            <p><span data-l="en">Zenithsoft. Mobile app that keeps working without network and syncs safely: SQLite, REST sync, JWT, geolocation, signatures and reporting.</span><span data-l="fr">Zenithsoft. Application mobile qui fonctionne sans réseau et se synchronise en sécurité : SQLite, sync REST, JWT, géolocalisation, signatures et rapports.</span></p>
+            <div class="chips"><span>Flutter</span><span>SQLite</span><span>REST</span><span>JWT</span></div>
+          </article>
+
+          <article class="card card--cta reveal">
+            <span class="mono">GITHUB</span>
+            <h3><span data-l="en">More code, experiments and write-ups.</span><span data-l="fr">Plus de code, d'expérimentations et de notes.</span></h3>
+            <a class="btn btn--paper" href="https://github.com/Haytame37" target="_blank" rel="noopener">github.com/Haytame37 ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STAGE / LEADERSHIP ============ -->
+    <section class="section section--ink" id="stage">
+      <div class="wrap">
+        <header class="sec-head sec-head--dark reveal">
+          <span class="sec-num">05</span>
+          <h2><span data-l="en">Beyond the code — <em>leading &amp; presenting</em>.</span><span data-l="fr">Au-delà du code — <em>fédérer &amp; présenter</em>.</span></h2>
+        </header>
+
+        <div class="gallery">
+          <figure class="shot shot--wide reveal">
+            <img src="assets/img/stage-pitch.webp" width="1400" height="1050" loading="lazy" alt="Haytame presenting on stage at the UH2C International Summer School 2026" />
+            <figcaption><span class="mono">UH2C · SUMMER SCHOOL '26</span><span data-l="en">Pitching our project to partners and jury.</span><span data-l="fr">Pitch de notre projet devant partenaires et jury.</span></figcaption>
+          </figure>
+          <figure class="shot shot--tall reveal">
+            <img src="assets/img/stage-talk.webp" width="887" height="1200" loading="lazy" alt="Haytame explaining a technical solution" />
+            <figcaption><span class="mono">CASABLANCA · 2026</span><span data-l="en">Explaining the technical approach.</span><span data-l="fr">Présentation de l'approche technique.</span></figcaption>
+          </figure>
+          <figure class="shot shot--tall reveal">
+            <img src="assets/img/stage-podium.webp" width="660" height="1040" loading="lazy" alt="Haytame speaking at a podium at Technopark" />
+            <figcaption><span class="mono">TECHNOPARK</span><span data-l="en">Speaking in front of an audience.</span><span data-l="fr">Prise de parole en public.</span></figcaption>
+          </figure>
+
+          <div class="lead-card reveal">
+            <span class="mono">LEADERSHIP</span>
+            <h3><span data-l="en">President — Club ENSA Industry 4.0</span><span data-l="fr">Président — Club ENSA Industrie 4.0</span></h3>
+            <p><span data-l="en">Team coordination, technical events, industrial visits, partnerships and technical communication.</span><span data-l="fr">Coordination d'équipe, événements techniques, visites industrielles, partenariats et communication technique.</span></p>
+            <div class="lead-card__row">
+              <div><b>7</b><span data-l="en">members, international team (RIFQA)</span><span data-l="fr">membres, équipe internationale (RIFQA)</span></div>
+              <div><b>12h</b><span data-l="en">CTF — web, cloud &amp; multimedia</span><span data-l="fr">CTF — web, cloud &amp; multimédia</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="section" id="education">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-num">06</span>
+          <h2><span data-l="en">Education &amp; <em>practice</em>.</span><span data-l="fr">Formation &amp; <em>pratique</em>.</span></h2>
+        </header>
+
+        <div class="edu">
+          <article class="edu__item reveal">
+            <span class="mono">2024 — <span data-l="en">PRESENT</span><span data-l="fr">AUJOURD'HUI</span></span>
+            <h3><span data-l="en">Engineering Degree — Industrial Digital Transformation</span><span data-l="fr">Diplôme d'Ingénieur d'État — Transformation Digitale Industrielle</span></h3>
+            <p class="edu__school">ENSA Beni Mellal · Sultan Moulay Slimane University</p>
+            <p class="edu__list">Software Engineering · Cloud &amp; Virtualization · Database Engineering · Big Data · Industrial IoT · Automation · Industrial Cybersecurity · Optimization · Smart Factory</p>
+          </article>
+          <article class="edu__item reveal">
+            <span class="mono">2023 — 2024</span>
+            <h3><span data-l="en">Bachelor's — Computer Science &amp; Database Engineering</span><span data-l="fr">Licence — Informatique &amp; Ingénierie des Bases de Données</span></h3>
+            <p class="edu__school">Faculty of Sciences Ben M'Sik · Hassan II University of Casablanca</p>
+            <p class="edu__list">SQL &amp; PL/SQL · Database Administration · Relational Modeling · Java/JEE · Web Development · UML · Networks</p>
+          </article>
+        </div>
+
+        <div class="practice">
+          <div class="practice__item reveal">
+            <h4 class="mono">CLOUD &amp; CONTAINERS</h4>
+            <p>Azure IaaS: Ubuntu VM, SSH/HTTP, storage &amp; Apache · Docker multi-service: Nginx, PostgreSQL, pgAdmin, volumes &amp; networks</p>
+          </div>
+          <div class="practice__item reveal">
+            <h4 class="mono">NETWORK &amp; WEB SECURITY</h4>
+            <p>Nmap · Wireshark · tcpdump · Kali Linux · SSH/sudo · DVWA · SQLi · XSS · CSRF · MITM / ARP poisoning</p>
+          </div>
+          <div class="practice__item reveal">
+            <h4 class="mono"><span data-l="en">LANGUAGES</span><span data-l="fr">LANGUES</span></h4>
+            <div class="langs">
+              <div><span data-l="en">Arabic</span><span data-l="fr">Arabe</span><i style="--v:1"></i><b><span data-l="en">Native</span><span data-l="fr">Maternelle</span></b></div>
+              <div><span data-l="en">English</span><span data-l="fr">Anglais</span><i style="--v:.85"></i><b>C1</b></div>
+              <div><span data-l="en">French</span><span data-l="fr">Français</span><i style="--v:.7"></i><b>B2</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <span class="sec-num sec-num--light">07</span>
+        <h2 class="contact__title reveal">
+          <span data-l="en">Let's build what <em>runs</em> tomorrow's industry.</span>
+          <span data-l="fr">Construisons ce qui fera <em>tourner</em> l'industrie de demain.</span>
+        </h2>
+        <p class="contact__lead reveal">
+          <span data-l="en">Looking for a final-year internship (PFE, 6 months, from February 2027) where software, enterprise systems, cloud/automation, data and industrial processes meet. Long-term: technical ownership, architecture and digital transformation leadership.</span>
+          <span data-l="fr">Je recherche un stage de fin d'études (PFE, 6 mois, dès février 2027) à la croisée du logiciel, des systèmes d'entreprise, du cloud/automatisation, de la data et des procédés industriels. À long terme : ownership technique, architecture et leadership en transformation digitale.</span>
+        </p>
+
+        <a class="contact__mail reveal" href="mailto:haytameelatraoui@gmail.com">haytameelatraoui@gmail.com <span aria-hidden="true">↗</span></a>
+
+        <div class="contact__grid reveal">
+          <a href="https://www.linkedin.com/in/haytame-el-atraoui" target="_blank" rel="noopener">
+            <span class="mono">LINKEDIN</span><b>/in/haytame-el-atraoui</b>
+          </a>
+          <a href="https://github.com/Haytame37" target="_blank" rel="noopener">
+            <span class="mono">GITHUB</span><b>@Haytame37</b>
+          </a>
+          <a href="tel:+212696547432">
+            <span class="mono"><span data-l="en">PHONE</span><span data-l="fr">TÉLÉPHONE</span></span><b>+212 696 547 432</b>
+          </a>
+          <a href="https://wa.me/212696547432" target="_blank" rel="noopener">
+            <span class="mono">WHATSAPP</span><b><span data-l="en">Message me</span><span data-l="fr">M'écrire</span></b>
+          </a>
+          <a href="Haytame_El_Atraoui_CV_PORTFOLIO_2027_EN.pdf" download class="is-signal">
+            <span class="mono">CV · PDF</span><b><span data-l="en">Download résumé</span><span data-l="fr">Télécharger le CV</span></b>
+          </a>
+        </div>
+      </div>
+      <footer class="foot wrap">
+        <span>© <span id="year">2026</span> Haytame El Atraoui</span>
+        <span class="mono"><span data-l="en">Designed &amp; built by hand — no template.</span><span data-l="fr">Conçu et développé à la main — sans template.</span></span>
+        <a href="#top" class="mono"><span data-l="en">Back to top ↑</span><span data-l="fr">Haut de page ↑</span></a>
+      </footer>
+    </section>
+  </main>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/lab.js" defer></script>
+</body>
 </html>
