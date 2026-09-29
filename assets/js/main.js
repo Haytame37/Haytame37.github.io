@@ -137,6 +137,49 @@
     }
   }
 
+  /* ---------- "find me" locator on group photos ----------
+     data-x / data-y are percentages of the natural image; the marker is
+     projected through object-fit: cover + object-position. */
+  var spotShots = document.querySelectorAll('.shot.has-spot');
+  function placeSpot(fig) {
+    var img = fig.querySelector('img'), spot = fig.querySelector('.spot');
+    if (!img || !spot || !img.naturalWidth) return;
+    var bw = fig.clientWidth, bh = fig.clientHeight;
+    var nw = img.naturalWidth, nh = img.naturalHeight;
+    var s = Math.max(bw / nw, bh / nh), rw = nw * s, rh = nh * s;
+    var pos = getComputedStyle(img).objectPosition.split(' ');
+    var px = parseFloat(pos[0]) / 100, py = parseFloat(pos[1] || pos[0]) / 100;
+    if (isNaN(px)) px = .5; if (isNaN(py)) py = .5;
+    var x = (bw - rw) * px + rw * (+spot.dataset.x / 100);
+    var y = (bh - rh) * py + rh * (+spot.dataset.y / 100);
+    // zoomed state: scale Z from the top-left corner, then pan so the person
+    // moves toward the centre while the image still covers the frame
+    var Z = 1.9;
+    var tx = Math.min(0, Math.max(bw - bw * Z, bw / 2 - x * Z));
+    var ty = Math.min(0, Math.max(bh - bh * Z, bh / 2 - y * Z));
+    var v = { '--px': x, '--py': y, '--tx': tx, '--ty': ty, '--fx': x * Z + tx, '--fy': y * Z + ty };
+    Object.keys(v).forEach(function (k) { fig.style.setProperty(k, v[k] + 'px'); });
+    // flip the label to the left when it would overflow the frame
+    var label = spot.querySelector('.spot__label');
+    spot.classList.remove('spot--left');
+    if (label && x + 52 + label.offsetWidth > bw - 8 && x - 52 - label.offsetWidth > 8) spot.classList.add('spot--left');
+    spot.classList.add('is-placed');
+  }
+  function placeAll() { spotShots.forEach(placeSpot); }
+  var canHover = window.matchMedia('(hover: hover)').matches;
+  spotShots.forEach(function (fig) {
+    var img = fig.querySelector('img'), spot = fig.querySelector('.spot');
+    if (img.complete) placeSpot(fig); else img.addEventListener('load', function () { placeSpot(fig); });
+    if (canHover) {
+      fig.addEventListener('mouseenter', function () { fig.classList.add('is-focus'); });
+      fig.addEventListener('mouseleave', function () { fig.classList.remove('is-focus'); });
+    }
+    spot.addEventListener('click', function (e) { e.stopPropagation(); fig.classList.toggle('is-focus'); });
+    if (!canHover) fig.addEventListener('click', function () { fig.classList.toggle('is-focus'); });
+  });
+  window.addEventListener('resize', placeAll);
+  if (window.ResizeObserver) { var ro = new ResizeObserver(placeAll); spotShots.forEach(function (f) { ro.observe(f); }); }
+
   /* ---------- looping videos: respect reduced motion ---------- */
   if (reduced) {
     document.querySelectorAll('video[autoplay]').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
