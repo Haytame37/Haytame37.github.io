@@ -137,6 +137,11 @@
     }
   }
 
+  /* ---------- looping videos: respect reduced motion ---------- */
+  if (reduced) {
+    document.querySelectorAll('video[autoplay]').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
+  }
+
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 })();

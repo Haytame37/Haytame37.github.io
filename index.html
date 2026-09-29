@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="assets/img/portrait.webp" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css?v=4" />
 
   <script type="application/ld+json">
   {
@@ -168,9 +168,19 @@
         </header>
 
         <div class="profile">
-          <figure class="profile__photo reveal">
-            <img src="assets/img/about.webp" width="880" height="1100" loading="lazy" alt="Haytame El Atraoui in front of an industrial building" />
-            <figcaption><span class="mono">FIG. 01</span> <span data-l="en">On site — where systems meet operations.</span><span data-l="fr">Sur site — là où les systèmes rencontrent les opérations.</span></figcaption>
+          <figure class="profile__photo duo reveal">
+            <div class="duo__grid">
+              <div class="duo__panel">
+                <video class="duo__media" src="assets/video/fig-code.mp4" poster="assets/img/fig-code-poster.webp" width="478" height="850" autoplay muted loop playsinline preload="metadata" aria-label="Hands coding on a laptop during a technical workshop"></video>
+                <span class="duo__tag mono">01 · CODE</span>
+              </div>
+              <div class="duo__panel">
+                <img class="duo__media" src="assets/img/fig-plant.webp" width="480" height="853" loading="lazy" alt="Haytame in a hard hat facing production equipment at COSUMAR" />
+                <span class="duo__tag mono">02 · <span data-l="en">PLANT</span><span data-l="fr">USINE</span></span>
+              </div>
+              <span class="duo__link" aria-hidden="true"></span>
+            </div>
+            <figcaption><span class="mono">FIG. 01</span> <span data-l="en">From the keyboard to the shop floor — the same engineer.</span><span data-l="fr">Du clavier à l'atelier — le même ingénieur.</span></figcaption>
           </figure>
 
           <div class="profile__body">
@@ -586,7 +596,7 @@
     </section>
   </main>
 
-  <script src="assets/js/main.js" defer></script>
-  <script src="assets/js/lab.js" defer></script>
+  <script src="assets/js/main.js?v=4" defer></script>
+  <script src="assets/js/lab.js?v=4" defer></script>
 </body>
 </html>

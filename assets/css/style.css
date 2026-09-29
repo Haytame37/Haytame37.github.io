@@ -260,7 +260,16 @@ html[lang="en"] .lang__opt[data-v="en"], html[lang="fr"] .lang__opt[data-v="fr"]
 .profile__photo img { width: 100%; height: auto; border-radius: 4px; filter: saturate(.92) contrast(1.02); }
 .profile__photo figcaption { display: flex; gap: 12px; align-items: baseline; margin-top: 12px; font-size: 14px; color: var(--muted); }
 .profile__photo figcaption .mono { color: var(--ink); }
-.lede { font-size: clamp(21px, 2vw, 27px); line-height: 1.42; letter-spacing: -.015em; margin: 0 0 48px; font-weight: 500; }
+/* FIG. 01 — two worlds: code | plant */
+.duo__grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.duo__panel { position: relative; overflow: hidden; border-radius: 4px; background: var(--ink); aspect-ratio: 9 / 16; }
+.profile__photo .duo__media { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 0; }
+.duo__panel:first-child .duo__media { object-position: 30% 50%; }
+.duo__panel:last-child .duo__media { object-position: 65% 50%; filter: saturate(.9); }
+.duo__tag { position: absolute; left: 10px; bottom: 10px; background: rgba(10,19,32,.78); color: #fff; padding: 5px 8px; border-radius: 3px; font-size: 10.5px; }
+.duo__panel:first-child .duo__tag { color: var(--ok); }
+.duo__link { position: absolute; left: 50%; top: 50%; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%; background: var(--signal); box-shadow: 0 0 0 5px var(--paper), 0 0 0 11px rgba(255,79,26,.25); z-index: 1; }
+.lede {font-size: clamp(21px, 2vw, 27px); line-height: 1.42; letter-spacing: -.015em; margin: 0 0 48px; font-weight: 500; }
 .lede em { color: var(--signal-ink); font-size: 1.1em; }
 
 .bridge { display: grid; grid-template-columns: 1fr 48px 1fr; border: 1px solid var(--line); border-radius: 4px; background: rgba(255,255,255,.4); }
